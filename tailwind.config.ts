@@ -79,6 +79,12 @@ export default {
 				sans: ['Poppins', 'sans-serif'],
 				heading: ['Rajdhani', 'sans-serif'],
 				display: ['Cinzel', 'serif'],
+				cursive: ['Dancing Script', 'cursive'],
+				calligraphy: ['Great Vibes', 'cursive'],
+				decorative: ['Parisienne', 'cursive'],
+				marathi: ['Martel', 'serif'],
+				hindi: ['Hind', 'sans-serif'],
+				sanskrit: ['Yatra One', 'cursive'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

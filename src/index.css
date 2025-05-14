@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Rajdhani:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Martel:wght@400;700;900&family=Hind:wght@400;500;600;700&family=Parisienne&family=Great+Vibes&family=Yatra+One&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -139,4 +139,26 @@
   .section-heading {
     @apply text-3xl md:text-4xl font-bold mb-8 relative after:absolute after:bottom-0 after:left-0 after:w-24 after:h-1 after:bg-shivayan-gold;
   }
+  
+  /* Multilingual typography classes */
+  .text-cursive {
+    @apply font-cursive;
+  }
+  
+  .text-calligraphy {
+    @apply font-calligraphy;
+  }
+  
+  .text-marathi {
+    @apply font-marathi;
+  }
+  
+  .text-hindi {
+    @apply font-hindi;
+  }
+  
+  .text-decorative {
+    @apply font-decorative;
+  }
 }
+

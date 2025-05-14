@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -11,6 +10,7 @@ import Section from '@/components/shared/Section';
 import AnimatedText from '@/components/shared/AnimatedText';
 import ScrollReveal from '@/components/shared/ScrollReveal';
 import useScrollAnimations from '@/hooks/useScrollAnimations';
+import CulturalTypography from '@/components/shared/CulturalTypography';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger, SplitText);
@@ -260,6 +260,9 @@ const Index = () => {
           </ScrollReveal>
         </div>
       </Section>
+
+      {/* Cultural Typography Section */}
+      <CulturalTypography />
 
       {/* CTA Section */}
       <Section className="bg-gradient-to-r from-shivayan-purple to-shivayan-dark-purple text-white">

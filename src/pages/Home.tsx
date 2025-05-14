@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -7,6 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import CustomButton from '@/components/shared/CustomButton';
 import Section from '@/components/shared/Section';
 import SEO from '@/components/shared/SEO';
+import MultilingualShowcase from '@/components/shared/MultilingualShowcase';
 
 // Register ScrollTrigger with GSAP
 gsap.registerPlugin(ScrollTrigger);
@@ -280,6 +280,9 @@ const Home = () => {
           </div>
         </div>
       </Section>
+
+      {/* Multilingual Typography Showcase */}
+      <MultilingualShowcase />
 
       {/* Services Section */}
       <Section className="bg-gradient-to-br from-shivayan-purple/10 to-shivayan-gold/10">
