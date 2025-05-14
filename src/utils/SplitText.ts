@@ -54,7 +54,7 @@ export class SplitText {
         });
         
         element.innerHTML = newHTML;
-        this.words = [...this.words, ...Array.from(element.querySelectorAll(".split-word"))];
+        this.words = [...this.words, ...Array.from(element.querySelectorAll(".split-word")) as HTMLElement[]];
       }
       
       // For chars (must be done after words for proper nesting)
@@ -85,7 +85,7 @@ export class SplitText {
           element.innerHTML = charHTML;
         }
         
-        this.chars = [...this.chars, ...Array.from(element.querySelectorAll(".split-char"))];
+        this.chars = [...this.chars, ...Array.from(element.querySelectorAll(".split-char")) as HTMLElement[]];
       }
       
       // For lines (very simplified - not actual line detection)
@@ -98,7 +98,7 @@ export class SplitText {
         });
         
         element.innerHTML = lineHTML;
-        this.lines = [...this.lines, ...Array.from(element.querySelectorAll(".split-line"))];
+        this.lines = [...this.lines, ...Array.from(element.querySelectorAll(".split-line")) as HTMLElement[]];
       }
     });
     
