@@ -8,26 +8,29 @@ import Footer from "./Footer";
 const Layout = () => {
   const location = useLocation();
   
-  // Page transition variants
+  // Enhanced page transition variants
   const pageVariants = {
     initial: {
       opacity: 0,
-      x: -20
+      y: 20,
+      scale: 0.98
     },
     enter: {
       opacity: 1,
-      x: 0,
+      y: 0,
+      scale: 1,
       transition: {
         duration: 0.5,
-        ease: [0.43, 0.13, 0.23, 0.96]
+        ease: [0.25, 0.1, 0.25, 1]
       }
     },
     exit: {
       opacity: 0,
-      x: 20,
+      y: -20,
+      scale: 0.98,
       transition: {
         duration: 0.3,
-        ease: [0.43, 0.13, 0.23, 0.96]
+        ease: [0.25, 0.1, 0.25, 1]
       }
     }
   };

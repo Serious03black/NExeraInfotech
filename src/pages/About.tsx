@@ -6,54 +6,19 @@ import { motion } from 'framer-motion';
 import PageHeader from "@/components/shared/PageHeader";
 import SEO from "@/components/shared/SEO";
 import Section from "@/components/shared/Section";
+import AnimatedText from '@/components/shared/AnimatedText';
+import ScrollReveal from '@/components/shared/ScrollReveal';
+import useScrollAnimations from '@/hooks/useScrollAnimations';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
+  // Use our custom hook for scroll animations
+  useScrollAnimations();
+  
   useEffect(() => {
-    // Timeline animations
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".about-content",
-        start: "top 75%",
-      }
-    });
-
-    tl.fromTo(".animate-text", 
-      { y: 50, opacity: 0 }, 
-      { y: 0, opacity: 1, stagger: 0.2, duration: 0.8 }
-    );
-    
-    // Team members animation
-    gsap.fromTo(".team-member",
-      { y: 50, opacity: 0 },
-      { 
-        y: 0, 
-        opacity: 1, 
-        stagger: 0.2, 
-        duration: 0.6,
-        scrollTrigger: {
-          trigger: ".team-section",
-          start: "top 75%",
-        }
-      }
-    );
-    
-    // Values animation
-    gsap.fromTo(".value-item",
-      { scale: 0.9, opacity: 0 },
-      { 
-        scale: 1, 
-        opacity: 1, 
-        stagger: 0.15, 
-        duration: 0.5,
-        scrollTrigger: {
-          trigger: ".values-section",
-          start: "top 80%",
-        }
-      }
-    );
+    // Additional custom animations can be added here if needed
   }, []);
 
   // Team members data
@@ -135,17 +100,25 @@ const About = () => {
         <Section className="about-content py-16 md:py-20">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gradient-purple-gold animate-text">Our Story</h2>
+              <ScrollReveal>
+                <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gradient-purple-gold animate-text">Our Story</h2>
+              </ScrollReveal>
               <div className="space-y-6">
-                <p className="text-lg text-foreground/80 animate-text">
-                  Founded in 2015, Shivayan Enterprises began with a vision to create technology solutions that blend modern innovation with timeless values from Indian heritage. Our name "Shivayan" combines elements representing transformation and journey, reflecting our commitment to guiding clients through their technological evolution.
-                </p>
-                <p className="text-lg text-foreground/80 animate-text">
-                  Starting as a small team of passionate technologists in Bangalore, we've grown to become a global company with offices in India, the United States, and Singapore. Throughout our growth, we've maintained our founding principles: technical excellence, cultural wisdom, and client-centered service.
-                </p>
-                <p className="text-lg text-foreground/80 animate-text">
-                  Today, Shivayan Enterprises serves clients across multiple industries, from startups to Fortune 500 companies. We take pride in our diverse, talented team that brings together different perspectives united by a shared commitment to innovation and excellence.
-                </p>
+                <ScrollReveal delay={0.1}>
+                  <p className="text-lg text-foreground/80 animate-text">
+                    Founded in 2015, Shivayan Enterprises began with a vision to create technology solutions that blend modern innovation with timeless values from Indian heritage. Our name "Shivayan" combines elements representing transformation and journey, reflecting our commitment to guiding clients through their technological evolution.
+                  </p>
+                </ScrollReveal>
+                <ScrollReveal delay={0.2}>
+                  <p className="text-lg text-foreground/80 animate-text">
+                    Starting as a small team of passionate technologists in Bangalore, we've grown to become a global company with offices in India, the United States, and Singapore. Throughout our growth, we've maintained our founding principles: technical excellence, cultural wisdom, and client-centered service.
+                  </p>
+                </ScrollReveal>
+                <ScrollReveal delay={0.3}>
+                  <p className="text-lg text-foreground/80 animate-text">
+                    Today, Shivayan Enterprises serves clients across multiple industries, from startups to Fortune 500 companies. We take pride in our diverse, talented team that brings together different perspectives united by a shared commitment to innovation and excellence.
+                  </p>
+                </ScrollReveal>
               </div>
             </div>
           </div>
@@ -155,18 +128,26 @@ const About = () => {
         <Section className="bg-gradient-to-br from-shivayan-purple/10 to-shivayan-gold/10">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <div>
-                <h2 className="text-3xl font-bold mb-6 text-gradient-cyan-purple animate-text">Our Mission</h2>
-                <p className="text-lg text-foreground/80 animate-text">
-                  To empower organizations through technology solutions that combine innovation with cultural wisdom, creating sustainable value and meaningful impact for our clients and communities.
-                </p>
-              </div>
-              <div>
-                <h2 className="text-3xl font-bold mb-6 text-gradient-orange-yellow animate-text">Our Vision</h2>
-                <p className="text-lg text-foreground/80 animate-text">
-                  To be recognized globally as a leader in technology services that bridge modern innovation with timeless values, setting new standards for excellence, ethics, and cultural integration in the IT industry.
-                </p>
-              </div>
+              <ScrollReveal direction="left">
+                <div>
+                  <h2 className="text-3xl font-bold mb-6 text-gradient-cyan-purple animate-text">Our Mission</h2>
+                  <AnimatedText 
+                    text="To empower organizations through technology solutions that combine innovation with cultural wisdom, creating sustainable value and meaningful impact for our clients and communities."
+                    className="text-lg text-foreground/80 animate-text"
+                    type="simple"
+                  />
+                </div>
+              </ScrollReveal>
+              <ScrollReveal direction="right" delay={0.2}>
+                <div>
+                  <h2 className="text-3xl font-bold mb-6 text-gradient-orange-yellow animate-text">Our Vision</h2>
+                  <AnimatedText 
+                    text="To be recognized globally as a leader in technology services that bridge modern innovation with timeless values, setting new standards for excellence, ethics, and cultural integration in the IT industry."
+                    className="text-lg text-foreground/80 animate-text"
+                    type="simple"
+                  />
+                </div>
+              </ScrollReveal>
             </div>
           </div>
         </Section>
@@ -174,16 +155,21 @@ const About = () => {
         {/* Core Values Section */}
         <Section className="values-section bg-background">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-gradient-purple-gold animate-text">Our Core Values</h2>
+            <ScrollReveal>
+              <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-gradient-purple-gold animate-text">Our Core Values</h2>
+            </ScrollReveal>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {coreValues.map((value, index) => (
-                <div 
+                <ScrollReveal 
                   key={index} 
-                  className="value-item bg-background/50 backdrop-blur-sm p-8 rounded-lg shadow-lg border border-shivayan-purple/10 hover:border-shivayan-gold/30 transition-all duration-300"
+                  delay={index * 0.1}
+                  className="h-full"
                 >
-                  <h3 className="text-2xl font-bold mb-3 text-gradient-cyan-purple">{value.title}</h3>
-                  <p className="text-foreground/70">{value.description}</p>
-                </div>
+                  <div className="value-item bg-background/50 backdrop-blur-sm p-8 rounded-lg shadow-lg border border-shivayan-purple/10 hover:border-shivayan-gold/30 transition-all duration-300 h-full">
+                    <h3 className="text-2xl font-bold mb-3 text-gradient-cyan-purple">{value.title}</h3>
+                    <p className="text-foreground/70">{value.description}</p>
+                  </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
@@ -192,21 +178,29 @@ const About = () => {
         {/* Team Section */}
         <Section className="team-section bg-gradient-to-br from-shivayan-dark-purple/5 to-shivayan-gold/5">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-gradient-purple-gold animate-text">Meet Our Leadership</h2>
+            <ScrollReveal>
+              <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-gradient-purple-gold animate-text">Meet Our Leadership</h2>
+            </ScrollReveal>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {teamMembers.map((member, index) => (
-                <div key={index} className="team-member">
+                <ScrollReveal key={index} delay={index * 0.15} className="team-member">
                   <div className="relative overflow-hidden rounded-lg mb-4 aspect-square">
-                    <img 
+                    <motion.img 
                       src={member.image} 
-                      alt={member.name} 
-                      className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-110" 
+                      alt={member.name}
+                      className="w-full h-full object-cover object-center" 
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.5 }}
                     />
                   </div>
-                  <h3 className="text-xl font-bold">{member.name}</h3>
+                  <AnimatedText 
+                    text={member.name}
+                    className="text-xl font-bold"
+                    type="simple"
+                  />
                   <p className="text-shivayan-purple font-medium mb-2">{member.role}</p>
                   <p className="text-sm text-foreground/70">{member.bio}</p>
-                </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
