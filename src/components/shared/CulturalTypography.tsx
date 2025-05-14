@@ -1,9 +1,9 @@
-
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ScrollReveal from '@/components/shared/ScrollReveal';
+import Section from '@/components/shared/Section';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
