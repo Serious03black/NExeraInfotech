@@ -12,7 +12,7 @@ import AnimatedText from '@/components/shared/AnimatedText';
 import ScrollReveal from '@/components/shared/ScrollReveal';
 import useScrollAnimations from '@/hooks/useScrollAnimations';
 import { WaveText, TypewriterText, GradientFlowText } from '@/components/shared/TextEffects';
-import { TechIconsCollection, TechStack, VectorDecoration } from '@/components/shared/TechIcons';
+import { TechIconsCollection, TechStack, VectorDecoration, TechIcon } from '@/components/shared/TechIcons';
 import { VectorGraphic, VectorBackground } from '@/components/shared/VectorGraphics';
 
 // Register GSAP plugins
