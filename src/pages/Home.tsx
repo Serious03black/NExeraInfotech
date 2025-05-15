@@ -6,7 +6,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import CustomButton from '@/components/shared/CustomButton';
 import Section from '@/components/shared/Section';
 import SEO from '@/components/shared/SEO';
-import MultilingualShowcase from '@/components/shared/MultilingualShowcase';
 
 // Register ScrollTrigger with GSAP
 gsap.registerPlugin(ScrollTrigger);
@@ -15,6 +14,7 @@ const Home = () => {
   const servicesRef = useRef<HTMLDivElement>(null);
   const testimonialRef = useRef<HTMLDivElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
+  const typographyRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Services section animation
@@ -32,6 +32,26 @@ const Home = () => {
           scrollTrigger: {
             trigger: servicesRef.current,
             start: "top 75%",
+          }
+        }
+      );
+    }
+
+    // Typography animation
+    if (typographyRef.current) {
+      const typographyItems = typographyRef.current.querySelectorAll('.typography-item');
+      
+      gsap.fromTo(typographyItems, 
+        { y: 30, opacity: 0 }, 
+        { 
+          y: 0, 
+          opacity: 1, 
+          stagger: 0.1,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: typographyRef.current,
+            start: "top 80%",
           }
         }
       );
@@ -113,6 +133,51 @@ const Home = () => {
           <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
         </svg>
       )
+    }
+  ];
+
+  const typographyExamples = [
+    {
+      text: "Innovation",
+      translation: "नवाचार",
+      fontClass: "font-cursive",
+      language: "English/Hindi",
+      description: "Creative thinking and new ideas"
+    },
+    {
+      text: "Heritage",
+      translation: "विरासत",
+      fontClass: "font-calligraphy",
+      language: "English/Hindi",
+      description: "Honoring our traditions"
+    },
+    {
+      text: "Excellence",
+      translation: "उत्कृष्टता",
+      fontClass: "font-marathi",
+      language: "English/Marathi",
+      description: "Commitment to quality"
+    },
+    {
+      text: "Creativity",
+      translation: "रचनात्मकता",
+      fontClass: "font-hindi",
+      language: "English/Hindi",
+      description: "Imaginative solutions"
+    },
+    {
+      text: "Wisdom",
+      translation: "ज्ञान",
+      fontClass: "font-sanskrit",
+      language: "English/Sanskrit",
+      description: "Ancient knowledge"
+    },
+    {
+      text: "Harmony",
+      translation: "सामंजस्य",
+      fontClass: "font-decorative",
+      language: "English/Hindi",
+      description: "Balance in all things"
     }
   ];
 
@@ -225,6 +290,57 @@ const Home = () => {
         </motion.div>
       </div>
 
+      {/* Cultural Typography Section */}
+      <Section className="bg-gradient-to-br from-shivayan-purple/5 to-shivayan-gold/5">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-3xl md:text-4xl font-bold mb-6 text-gradient-purple-gold"
+            >
+              Cultural Typography
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-lg max-w-2xl mx-auto text-foreground/80"
+            >
+              Our design philosophy bridges cultures and traditions through typography, celebrating the rich linguistic heritage of India alongside modern global design.
+            </motion.p>
+          </div>
+
+          <div ref={typographyRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {typographyExamples.map((example, index) => (
+              <div key={index} className="typography-item">
+                <motion.div
+                  className="bg-card p-8 rounded-lg shadow-lg border border-shivayan-purple/10 hover:border-shivayan-gold transition-all duration-300"
+                  whileHover={{ 
+                    scale: 1.03,
+                    boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)"
+                  }}
+                >
+                  <div className={`text-3xl mb-2 ${example.fontClass}`}>
+                    {example.text}
+                  </div>
+                  <div className="text-2xl mb-4 font-hindi text-shivayan-purple">
+                    {example.translation}
+                  </div>
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-sm text-foreground/70">{example.language}</span>
+                  </div>
+                  <p className="text-foreground/80">{example.description}</p>
+                </motion.div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
       {/* About Section */}
       <Section className="bg-background">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -280,9 +396,6 @@ const Home = () => {
           </div>
         </div>
       </Section>
-
-      {/* Multilingual Typography Showcase */}
-      <MultilingualShowcase />
 
       {/* Services Section */}
       <Section className="bg-gradient-to-br from-shivayan-purple/10 to-shivayan-gold/10">
