@@ -84,24 +84,7 @@ const Index = () => {
     }
 
     // Tech icons floating animation
-    const techSection = document.querySelector('.tech-section');
-    if (techSection) {
-      gsap.fromTo(techSection.querySelectorAll('.tech-icon'),
-        { y: 100, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          stagger: 0.1,
-          duration: 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: techSection,
-            start: "top 80%",
-          }
-        }
-      );
-    }
-    
+   
   }, []);
 
   const features = [

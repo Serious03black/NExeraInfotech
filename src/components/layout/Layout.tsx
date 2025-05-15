@@ -48,7 +48,7 @@ const Layout = () => {
       y: 0,
       transition: {
         duration: 0.5,
-        ease: "easeOut"
+        ease: "easeInOut"
       }
     }
   };
@@ -56,7 +56,7 @@ const Layout = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <AnimatePresence mode="wait">
+      <AnimatePresence >
         <motion.main 
           key={location.pathname}
           className="flex-grow pt-16"
