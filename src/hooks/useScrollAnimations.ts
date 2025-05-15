@@ -13,6 +13,7 @@ interface UseScrollAnimationsProps {
   cardsSelector?: string;
   listItemsSelector?: string;
   statsSelector?: string;
+  calligraphySelector?: string;
   containerRef?: RefObject<HTMLElement>;
   onlyOnce?: boolean;
 }
@@ -24,6 +25,7 @@ const useScrollAnimations = ({
   cardsSelector = '.gsap-card',
   listItemsSelector = '.gsap-list-item',
   statsSelector = '.gsap-stat',
+  calligraphySelector = '.gsap-calligraphy',
   containerRef,
   onlyOnce = true
 }: UseScrollAnimationsProps = {}) => {
@@ -138,12 +140,46 @@ const useScrollAnimations = ({
         }
       );
     });
+    
+    // Calligraphy elements animation - special effect for decorative typography
+    const calligraphyElements = document.querySelectorAll(calligraphySelector);
+    calligraphyElements.forEach((element) => {
+      // Create a timeline for more complex animation
+      const tl = gsap.timeline({
+        scrollTrigger: getScrollTriggerConfig(element)
+      });
+      
+      tl.fromTo(element, 
+        { 
+          opacity: 0, 
+          scale: 0.8, 
+          rotationZ: -5 
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          rotationZ: 0,
+          duration: 1.2,
+          ease: "elastic.out(1, 0.3)"
+        }
+      );
+      
+      // Add a subtle continuous animation
+      gsap.to(element, {
+        y: "-5px",
+        duration: 1.5,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+        delay: 1
+      });
+    });
 
     // Cleanup function
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
-  }, [titleSelector, textSelector, imageSelector, cardsSelector, listItemsSelector, statsSelector, containerRef, onlyOnce]);
+  }, [titleSelector, textSelector, imageSelector, cardsSelector, listItemsSelector, statsSelector, calligraphySelector, containerRef, onlyOnce]);
 };
 
 export default useScrollAnimations;
