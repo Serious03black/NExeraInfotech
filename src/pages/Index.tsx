@@ -11,8 +11,6 @@ import Section from '@/components/shared/Section';
 import AnimatedText from '@/components/shared/AnimatedText';
 import ScrollReveal from '@/components/shared/ScrollReveal';
 import useScrollAnimations from '@/hooks/useScrollAnimations';
-import { WaveText, TypewriterText, GradientFlowText } from '@/components/shared/TextEffects';
-import { TechIconsCollection } from '@/components/shared/TechIcons';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger, SplitText);
@@ -82,9 +80,7 @@ const Index = () => {
         console.error("Error with SplitText:", error);
       }
     }
-
-    // Tech icons floating animation
-   
+    
   }, []);
 
   const features = [
@@ -225,20 +221,14 @@ const Index = () => {
             className="hero-title text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-6 gsap-title"
             variants={fadeInUp}
           >
-            <WaveText text="Welcome to" className="block mb-2" />
-            <GradientFlowText 
-              text="Shivayan" 
-              gradientColors="from-shivayan-gold via-shivayan-orange to-shivayan-yellow"
-              className="text-6xl md:text-7xl lg:text-8xl"
-            />
+            Welcome to <span className="text-gradient-orange-yellow">Shivayan</span>
           </motion.h1>
           
           <motion.p 
             className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-10 gsap-paragraph"
             variants={fadeInUp}
           >
-            Where <TypewriterText text="Innovation" className="text-shivayan-gold font-bold" /> Meets 
-            <TypewriterText text=" Heritage" delay={1000} className="text-shivayan-gold font-bold" />
+            Where <span className="text-shivayan-gold">Innovation</span> Meets <span className="text-shivayan-gold">Heritage</span>
           </motion.p>
           
           <motion.div
@@ -288,46 +278,15 @@ const Index = () => {
         </motion.div>
       </motion.div>
 
-      {/* Technology Icons Section */}
-      <Section className="tech-section bg-background py-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <ScrollReveal>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-purple-gold">
-                <GradientFlowText text="Technologies We Master" />
-              </h2>
-            </ScrollReveal>
-            <ScrollReveal delay={0.2}>
-              <p className="text-lg max-w-2xl mx-auto text-foreground/80">
-                Our expertise spans across modern web and mobile development technologies to deliver cutting-edge solutions.
-              </p>
-            </ScrollReveal>
-          </div>
-          
-          <ScrollReveal>
-            <TechIconsCollection 
-              showLabels={true}
-              grid={true}
-              animations={true}
-              iconSize="lg"
-            />
-          </ScrollReveal>
-        </div>
-      </Section>
-
       {/* Features Section */}
       <Section className="bg-background py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <ScrollReveal>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-purple-gold gsap-title">
-                <WaveText text="Why Choose Shivayan?" />
-              </h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-purple-gold gsap-title">Why Choose Shivayan?</h2>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <p className="text-lg max-w-2xl mx-auto text-foreground/80 gsap-paragraph">
-                Our unique approach combines technical excellence with cultural wisdom to deliver exceptional solutions for our clients.
-              </p>
+              <p className="text-lg max-w-2xl mx-auto text-foreground/80 gsap-paragraph">Our unique approach combines technical excellence with cultural wisdom to deliver exceptional solutions for our clients.</p>
             </ScrollReveal>
           </div>
           
@@ -365,9 +324,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <ScrollReveal>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-purple-gold">
-                <TypewriterText text="Cultural Typography" speed={50} />
-              </h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-purple-gold">Cultural Typography</h2>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <p className="text-lg max-w-2xl mx-auto text-foreground/80">
@@ -404,14 +361,10 @@ const Index = () => {
       <Section className="bg-gradient-to-r from-shivayan-purple to-shivayan-dark-purple text-white">
         <div className="container mx-auto px-4 text-center">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 gsap-title">
-              <WaveText text="Ready to Transform Your Business?" />
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 gsap-title">Ready to Transform Your Business?</h2>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
-            <p className="text-xl max-w-2xl mx-auto mb-8 text-white/90 gsap-paragraph">
-              Partner with Shivayan Enterprises for innovative solutions that drive growth, efficiency, and success.
-            </p>
+            <p className="text-xl max-w-2xl mx-auto mb-8 text-white/90 gsap-paragraph">Partner with Shivayan Enterprises for innovative solutions that drive growth, efficiency, and success.</p>
           </ScrollReveal>
           <ScrollReveal delay={0.4}>
             <Link to="/contact">

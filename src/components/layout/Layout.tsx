@@ -8,47 +8,29 @@ import Footer from "./Footer";
 const Layout = () => {
   const location = useLocation();
   
-  // Enhanced page transition variants with more dynamic effects
+  // Enhanced page transition variants
   const pageVariants = {
     initial: {
       opacity: 0,
       y: 20,
-      scale: 0.98,
-      filter: "blur(8px)"
+      scale: 0.98
     },
     enter: {
       opacity: 1,
       y: 0,
       scale: 1,
-      filter: "blur(0px)",
       transition: {
-        duration: 0.6,
-        ease: [0.25, 0.1, 0.25, 1],
-        when: "beforeChildren",
-        staggerChildren: 0.1
+        duration: 0.5,
+        ease: [0.25, 0.1, 0.25, 1]
       }
     },
     exit: {
       opacity: 0,
       y: -20,
       scale: 0.98,
-      filter: "blur(8px)",
       transition: {
-        duration: 0.4,
+        duration: 0.3,
         ease: [0.25, 0.1, 0.25, 1]
-      }
-    }
-  };
-  
-  // Text animation variants for child elements
-  const textVariants = {
-    initial: { opacity: 0, y: 20 },
-    enter: { 
-      opacity: 1, 
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeInOut"
       }
     }
   };
@@ -56,7 +38,7 @@ const Layout = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <AnimatePresence >
+      <AnimatePresence mode="wait">
         <motion.main 
           key={location.pathname}
           className="flex-grow pt-16"
@@ -65,13 +47,7 @@ const Layout = () => {
           exit="exit"
           variants={pageVariants}
         >
-          <motion.div
-            variants={textVariants}
-            initial="initial"
-            animate="enter"
-          >
-            <Outlet />
-          </motion.div>
+          <Outlet />
         </motion.main>
       </AnimatePresence>
       <Footer />
