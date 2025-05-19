@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Rajdhani:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Martel:wght@400;700;900&family=Hind:wght@400;500;600;700&family=Parisienne&family=Great+Vibes&family=Yatra+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Rajdhani:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Martel:wght@400;700;900&family=Hind:wght@400;500;600;700&family=Parisienne&family=Great+Vibes&family=Yatra+One&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Abril+Fatface&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -165,6 +164,27 @@
     @apply font-sanskrit;
   }
 
+  /* Additional designer fonts */
+  .text-playfair {
+    @apply font-playfair;
+  }
+  
+  .text-montserrat {
+    @apply font-montserrat;
+  }
+  
+  .text-quicksand {
+    @apply font-quicksand;
+  }
+  
+  .text-abril {
+    @apply font-abril;
+  }
+  
+  .text-cormorant {
+    @apply font-cormorant;
+  }
+
   /* Multi-language text animations */
   .text-float {
     @apply animate-float;
@@ -180,5 +200,26 @@
 
   .multilingual-text {
     @apply transition-all duration-500 ease-in-out;
+  }
+  
+  /* Designer card styles */
+  .designer-card {
+    @apply relative overflow-hidden rounded-xl border bg-card p-6 transition-all duration-300 hover:shadow-lg;
+  }
+  
+  .designer-card-gradient {
+    @apply relative overflow-hidden rounded-xl border bg-gradient-to-br from-shivayan-purple/10 to-shivayan-gold/10 p-6 transition-all duration-300 hover:shadow-lg;
+  }
+  
+  .designer-card-glass {
+    @apply relative overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-lg p-6 transition-all duration-300 hover:shadow-lg;
+  }
+  
+  .designer-card-minimal {
+    @apply relative overflow-hidden rounded-none border-b p-6 transition-all duration-300 hover:bg-muted/30;
+  }
+  
+  .designer-card-accent {
+    @apply relative overflow-hidden rounded-xl border-l-4 border-shivayan-gold bg-card p-6 transition-all duration-300 hover:shadow-lg;
   }
 }

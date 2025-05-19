@@ -240,22 +240,26 @@ const Index = () => {
     {
       text: "उत्कृष्टता के संग अभिनव तकनीक",
       language: "Hindi",
-      className: "text-hindi text-2xl md:text-3xl font-bold"
+      fontFamily: "hindi",
+      className: "text-2xl md:text-3xl font-bold"
     },
     {
       text: "नवीन तंत्रज्ञान आणि उत्कृष्टता",
       language: "Marathi",
-      className: "text-marathi text-2xl md:text-3xl font-bold"
+      fontFamily: "marathi",
+      className: "text-2xl md:text-3xl font-bold"
     },
     {
       text: "Innovation Through Excellence",
       language: "English",
-      className: "font-display text-2xl md:text-3xl font-bold"
+      fontFamily: "playfair",
+      className: "text-2xl md:text-3xl font-bold"
     },
     {
       text: "प्रौद्योगिकी उत्कृष्टता सेवा",
       language: "Sanskrit",
-      className: "text-sanskrit text-2xl md:text-3xl font-bold"
+      fontFamily: "sanskrit",
+      className: "text-2xl md:text-3xl font-bold"
     }
   ];
 
@@ -421,14 +425,128 @@ const Index = () => {
               </p>
             </ScrollReveal>
           </div>
-          
+
+          {/* Designer Tech Cards Section */}
           <ScrollReveal>
-            <TechIconsCollection 
-              showLabels={true}
-              grid={true}
-              animations={true}
-              iconSize="lg"
-            />
+            <div className="mb-12">
+              <TechIconsCollection 
+                showLabels={true}
+                grid={true}
+                animations={true}
+                iconSize="lg"
+                fontStyle="abril"
+                cardStyle="glass"
+                showDescriptions={true}
+                className="mb-8"
+              />
+            </div>
+          </ScrollReveal>
+          
+          {/* Interactive Typography Showcase */}
+          <ScrollReveal delay={0.3}>
+            <div className="mt-16 max-w-4xl mx-auto">
+              <h3 className="text-xl md:text-2xl font-bold mb-6 text-center text-gradient-cyan-purple">
+                Design Language Across Borders
+              </h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <MultilingualText 
+                  texts={[
+                    {
+                      text: "Crafting beautiful interfaces",
+                      language: "English",
+                      fontFamily: "playfair",
+                      className: "text-xl"
+                    },
+                    {
+                      text: "सुंदर इंटरफेस तैयार करना",
+                      language: "Hindi",
+                      fontFamily: "hindi",
+                      className: "text-xl"
+                    }
+                  ]}
+                  interval={3000}
+                  animationType="fade"
+                  cardStyle="gradient"
+                  showLanguage={true}
+                />
+                
+                <MultilingualText 
+                  texts={[
+                    {
+                      text: "Elegant Typography Solutions",
+                      language: "English",
+                      fontFamily: "cormorant",
+                      className: "text-xl"
+                    },
+                    {
+                      text: "आकर्षक टायपोग्राफी समाधान",
+                      language: "Sanskrit",
+                      fontFamily: "sanskrit",
+                      className: "text-xl"
+                    }
+                  ]}
+                  interval={3500}
+                  animationType="scale"
+                  cardStyle="accent"
+                  showLanguage={true}
+                />
+              </div>
+              
+              <div className="grid grid-cols-1 gap-6">
+                <MultilingualText 
+                  texts={[
+                    {
+                      text: "Design is not just what it looks like and feels like. Design is how it works.",
+                      language: "Steve Jobs Quote",
+                      fontFamily: "montserrat",
+                      className: "text-lg italic"
+                    },
+                    {
+                      text: "डिझाईन हे फक्त दिसणे आणि वाटणे नाही. डिझाईन हे काम कसे करते हे आहे.",
+                      language: "Marathi Translation",
+                      fontFamily: "marathi",
+                      className: "text-lg"
+                    },
+                    {
+                      text: "디자인은 보이는 것과 느껴지는 것만이 아닙니다. 디자인은 어떻게 작동하는가입니다.",
+                      language: "Korean Translation",
+                      className: "text-lg"
+                    }
+                  ]}
+                  interval={4000}
+                  animationType="rotate"
+                  cardStyle="minimal"
+                  showLanguage={true}
+                />
+              </div>
+            </div>
+          </ScrollReveal>
+          
+          {/* Design Principles */}
+          <ScrollReveal delay={0.4}>
+            <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="designer-card-gradient">
+                <h3 className="text-xl font-bold mb-3 text-playfair">Typography Focus</h3>
+                <p className="text-foreground/80 text-quicksand">
+                  Beautiful typography tailored for readability and aesthetics across languages and scripts.
+                </p>
+              </div>
+              
+              <div className="designer-card-glass">
+                <h3 className="text-xl font-bold mb-3 text-cormorant">Responsive Design</h3>
+                <p className="text-foreground/80 text-montserrat">
+                  Fluid layouts that adapt elegantly to any device and screen size.
+                </p>
+              </div>
+              
+              <div className="designer-card-accent">
+                <h3 className="text-xl font-bold mb-3 text-abril">Interactive Elements</h3>
+                <p className="text-foreground/80 font-quicksand">
+                  Engaging animations and transitions that enhance user experience.
+                </p>
+              </div>
+            </div>
           </ScrollReveal>
         </div>
       </Section>
