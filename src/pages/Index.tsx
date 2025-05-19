@@ -238,27 +238,27 @@ const Index = () => {
   
   const multilingualTexts = [
     {
-      text: "उत्कृष्टता के संग अभिनव तकनीक",
-      language: "Hindi",
-      fontFamily: "hindi",
-      className: "text-2xl md:text-3xl font-bold"
-    },
-    {
-      text: "नवीन तंत्रज्ञान आणि उत्कृष्टता",
-      language: "Marathi",
-      fontFamily: "marathi",
-      className: "text-2xl md:text-3xl font-bold"
-    },
-    {
       text: "Innovation Through Excellence",
       language: "English",
-      fontFamily: "playfair",
+      fontFamily: "playfair" as const,
       className: "text-2xl md:text-3xl font-bold"
     },
     {
-      text: "प्रौद्योगिकी उत्कृष्टता सेवा",
-      language: "Sanskrit",
-      fontFamily: "sanskrit",
+      text: "Power Through Knowledge",
+      language: "English",
+      fontFamily: "quicksand" as const,
+      className: "text-2xl md:text-3xl font-bold"
+    },
+    {
+      text: "Creativity & Precision",
+      language: "English",
+      fontFamily: "montserrat" as const,
+      className: "text-2xl md:text-3xl font-bold"
+    },
+    {
+      text: "Excellence Through Design",
+      language: "English",
+      fontFamily: "cormorant" as const,
       className: "text-2xl md:text-3xl font-bold"
     }
   ];

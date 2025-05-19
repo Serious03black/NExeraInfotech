@@ -23,25 +23,25 @@ const Home = () => {
       text: "Excellence and Innovation",
       language: "English",
       className: "text-2xl font-bold",
-      fontFamily: "display"
+      fontFamily: "display" as const
+    },
+    {
+      text: "Creative Design Solutions",
+      language: "English",
+      className: "text-2xl font-bold",
+      fontFamily: "sans" as const
     },
     {
       text: "Power & Innovation",
       language: "English",
       className: "text-2xl font-bold",
-      fontFamily: "playfair"
+      fontFamily: "playfair" as const
     },
     {
       text: "Elegance & Excellence",
       language: "English",
       className: "text-2xl font-bold",
-      fontFamily: "quicksand"
-    },
-    {
-      text: "Creative Solutions",
-      language: "English",
-      className: "text-2xl font-bold",
-      fontFamily: "montserrat"
+      fontFamily: "quicksand" as const
     }
   ];
 
