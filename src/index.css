@@ -160,5 +160,25 @@
   .text-decorative {
     @apply font-decorative;
   }
-}
+  
+  .text-sanskrit {
+    @apply font-sanskrit;
+  }
 
+  /* Multi-language text animations */
+  .text-float {
+    @apply animate-float;
+  }
+  
+  .text-pulse {
+    @apply animate-pulse-slow;
+  }
+
+  .multilingual-text-wrapper {
+    @apply relative overflow-hidden py-4;
+  }
+
+  .multilingual-text {
+    @apply transition-all duration-500 ease-in-out;
+  }
+}

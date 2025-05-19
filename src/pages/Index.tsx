@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -13,6 +12,7 @@ import ScrollReveal from '@/components/shared/ScrollReveal';
 import useScrollAnimations from '@/hooks/useScrollAnimations';
 import { WaveText, TypewriterText, GradientFlowText } from '@/components/shared/TextEffects';
 import { TechIconsCollection } from '@/components/shared/TechIcons';
+import MultilingualText from '@/components/shared/MultilingualText';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger, SplitText);
@@ -137,6 +137,22 @@ const Index = () => {
         }
       );
     });
+
+    // Multilingual text animation
+    const multilingualSection = document.querySelector('.multilingual-section');
+    if (multilingualSection) {
+      gsap.fromTo(multilingualSection,
+        { opacity: 0 },
+        { 
+          opacity: 1,
+          duration: 1,
+          scrollTrigger: {
+            trigger: multilingualSection,
+            start: "top 85%",
+          }
+        }
+      );
+    }
     
   }, []);
 
@@ -217,6 +233,29 @@ const Index = () => {
     {
       title: "Partnership Rewards",
       description: "Special discounts on new services and products."
+    }
+  ];
+  
+  const multilingualTexts = [
+    {
+      text: "उत्कृष्टता के संग अभिनव तकनीक",
+      language: "Hindi",
+      className: "text-hindi text-2xl md:text-3xl font-bold"
+    },
+    {
+      text: "नवीन तंत्रज्ञान आणि उत्कृष्टता",
+      language: "Marathi",
+      className: "text-marathi text-2xl md:text-3xl font-bold"
+    },
+    {
+      text: "Innovation Through Excellence",
+      language: "English",
+      className: "font-display text-2xl md:text-3xl font-bold"
+    },
+    {
+      text: "प्रौद्योगिकी उत्कृष्टता सेवा",
+      language: "Sanskrit",
+      className: "text-sanskrit text-2xl md:text-3xl font-bold"
     }
   ];
 
@@ -333,6 +372,19 @@ const Index = () => {
               </CustomButton>
             </Link>
           </motion.div>
+          
+          {/* Multilingual Text Showcase */}
+          <motion.div 
+            className="mt-12"
+            variants={fadeInUp}
+          >
+            <MultilingualText 
+              texts={multilingualTexts} 
+              interval={3000}
+              animationType="slide"
+              className="text-white py-4"
+            />
+          </motion.div>
         </div>
         
         {/* Scroll indicator with enhanced animation */}
@@ -397,20 +449,22 @@ const Index = () => {
             </ScrollReveal>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {products.map((product, index) => (
-              <ScrollReveal 
-                key={index}
-                delay={index * 0.1}
-              >
-                <div className="product-item bg-background/70 backdrop-blur-sm p-8 rounded-lg shadow-lg border border-shivayan-purple/10 hover:border-shivayan-gold/30 transition-all duration-300 hover:-translate-y-1">
-                  <div className="text-4xl mb-4">{product.icon}</div>
-                  <h3 className="text-xl font-bold mb-3">{product.title}</h3>
-                  <p className="text-foreground/70">{product.description}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+          <ScrollReveal>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {products.map((product, index) => (
+                <ScrollReveal 
+                  key={index}
+                  delay={index * 0.1}
+                >
+                  <div className="product-item bg-background/70 backdrop-blur-sm p-8 rounded-lg shadow-lg border border-shivayan-purple/10 hover:border-shivayan-gold/30 transition-all duration-300 hover:-translate-y-1">
+                    <div className="text-4xl mb-4">{product.icon}</div>
+                    <h3 className="text-xl font-bold mb-3">{product.title}</h3>
+                    <p className="text-foreground/70">{product.description}</p>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </ScrollReveal>
           
           <ScrollReveal direction="up" delay={0.5} className="mt-10 text-center">
             <Link to="/solutions">
@@ -491,6 +545,74 @@ const Index = () => {
               </div>
             ))}
           </div>
+        </div>
+      </Section>
+      
+      {/* Multilingual Section */}
+      <Section className="multilingual-section bg-gradient-to-br from-shivayan-purple/10 to-shivayan-gold/10 py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <ScrollReveal>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-purple-gold">
+                <WaveText text="Global Reach, Local Touch" />
+              </h2>
+            </ScrollReveal>
+            <ScrollReveal delay={0.2}>
+              <p className="text-lg max-w-2xl mx-auto text-foreground/80">
+                We connect with clients across languages and cultures, providing tailored solutions worldwide
+              </p>
+            </ScrollReveal>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <ScrollReveal delay={0.1}>
+              <div className="bg-background/50 backdrop-blur-sm p-6 rounded-lg border border-shivayan-purple/10 hover:border-shivayan-gold/30 transition-all duration-300 text-center h-full flex flex-col justify-center items-center">
+                <h3 className="text-hindi text-2xl font-bold mb-4 text-foreground">उत्कृष्ट सेवाएं</h3>
+                <p className="text-foreground/70">Premier services tailored for excellence</p>
+              </div>
+            </ScrollReveal>
+            
+            <ScrollReveal delay={0.2}>
+              <div className="bg-background/50 backdrop-blur-sm p-6 rounded-lg border border-shivayan-purple/10 hover:border-shivayan-gold/30 transition-all duration-300 text-center h-full flex flex-col justify-center items-center">
+                <h3 className="text-marathi text-2xl font-bold mb-4 text-foreground">विश्वासार्ह उत्पादने</h3>
+                <p className="text-foreground/70">Trustworthy products you can rely on</p>
+              </div>
+            </ScrollReveal>
+            
+            <ScrollReveal delay={0.3}>
+              <div className="bg-background/50 backdrop-blur-sm p-6 rounded-lg border border-shivayan-purple/10 hover:border-shivayan-gold/30 transition-all duration-300 text-center h-full flex flex-col justify-center items-center">
+                <h3 className="text-sanskrit text-2xl font-bold mb-4 text-foreground">ग्राहक विश्वास</h3>
+                <p className="text-foreground/70">Customer trust is our foundation</p>
+              </div>
+            </ScrollReveal>
+            
+            <ScrollReveal delay={0.4}>
+              <div className="bg-background/50 backdrop-blur-sm p-6 rounded-lg border border-shivayan-purple/10 hover:border-shivayan-gold/30 transition-all duration-300 text-center h-full flex flex-col justify-center items-center">
+                <h3 className="text-calligraphy text-2xl font-bold mb-4 text-foreground">Loyalty Rewards</h3>
+                <p className="text-foreground/70">Benefits that grow with our relationship</p>
+              </div>
+            </ScrollReveal>
+          </div>
+          
+          <ScrollReveal className="text-center mt-12">
+            <div className="inline-flex flex-wrap justify-center gap-6">
+              <div className="px-6 py-3 bg-shivayan-purple/10 rounded-full text-foreground/80">
+                <span className="text-cursive text-xl">Innovative</span>
+              </div>
+              <div className="px-6 py-3 bg-shivayan-gold/10 rounded-full text-foreground/80">
+                <span className="text-decorative text-xl">Powerful</span>
+              </div>
+              <div className="px-6 py-3 bg-shivayan-orange/10 rounded-full text-foreground/80">
+                <span className="text-hindi text-xl">विश्वसनीय</span>
+              </div>
+              <div className="px-6 py-3 bg-shivayan-cyan/10 rounded-full text-foreground/80">
+                <span className="text-marathi text-xl">आधुनिक</span>
+              </div>
+              <div className="px-6 py-3 bg-shivayan-purple/10 rounded-full text-foreground/80">
+                <span className="text-sanskrit text-xl">शक्तिशाली</span>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </Section>
       

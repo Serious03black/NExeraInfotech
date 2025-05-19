@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -7,6 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import CustomButton from '@/components/shared/CustomButton';
 import Section from '@/components/shared/Section';
 import SEO from '@/components/shared/SEO';
+import MultilingualText from '@/components/shared/MultilingualText';
 
 // Register ScrollTrigger with GSAP
 gsap.registerPlugin(ScrollTrigger);
@@ -17,6 +17,29 @@ const Home = () => {
   const statsRef = useRef<HTMLDivElement>(null);
   const productsRef = useRef<HTMLDivElement>(null);
   const trustRef = useRef<HTMLDivElement>(null);
+
+  const multilingualTexts = [
+    {
+      text: "उत्कृष्टता और नवाचार",
+      language: "Hindi",
+      className: "text-hindi text-2xl font-bold"
+    },
+    {
+      text: "उत्कृष्टता आणि नवकल्पना",
+      language: "Marathi",
+      className: "text-marathi text-2xl font-bold"
+    },
+    {
+      text: "Power & Innovation",
+      language: "English",
+      className: "font-display text-2xl font-bold"
+    },
+    {
+      text: "शक्ति और नवाचार",
+      language: "Sanskrit",
+      className: "text-sanskrit text-2xl font-bold"
+    }
+  ];
 
   useEffect(() => {
     // Services section animation
@@ -268,11 +291,26 @@ const Home = () => {
                 Building cutting-edge enterprise software solutions that drive business growth and transformation.
               </p>
             </motion.div>
+            
+            {/* Multilingual Text */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="mb-8"
+            >
+              <MultilingualText 
+                texts={multilingualTexts} 
+                interval={3000}
+                animationType="fade"
+                className="text-white"
+              />
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
               className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4"
             >
               <Link to="/contact">
@@ -508,6 +546,127 @@ const Home = () => {
               Explore All Services
             </CustomButton>
           </Link>
+        </div>
+      </Section>
+
+      {/* Multilingual Typography Showcase */}
+      <Section className="bg-gradient-to-br from-shivayan-purple/5 to-shivayan-gold/5">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-3xl md:text-4xl font-bold mb-6 text-gradient-cyan-purple"
+            >
+              Global Excellence
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-lg max-w-2xl mx-auto text-foreground/80"
+            >
+              Our services transcend languages and cultures to provide exceptional solutions worldwide
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <motion.div 
+              className="bg-background/80 rounded-lg shadow-lg p-8 border border-shivayan-purple/10"
+              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h3 className="text-hindi text-2xl font-bold mb-4 text-foreground">उत्कृष्ट सेवाएं और उत्पाद</h3>
+              <p className="text-foreground/80 mb-6">Our Premium Services and Products in Hindi</p>
+              <div className="space-y-4">
+                <div className="flex items-center">
+                  <div className="p-2 bg-shivayan-purple/10 rounded-full mr-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-shivayan-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                  </div>
+                  <span className="text-hindi">सुरक्षित क्लाउड सेवाएं</span>
+                </div>
+                <div className="flex items-center">
+                  <div className="p-2 bg-shivayan-purple/10 rounded-full mr-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-shivayan-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                  </div>
+                  <span className="text-hindi">अभिनव एआई समाधान</span>
+                </div>
+                <div className="flex items-center">
+                  <div className="p-2 bg-shivayan-purple/10 rounded-full mr-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-shivayan-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                  </div>
+                  <span className="text-hindi">एंटरप्राइज़ प्लेटफॉर्म</span>
+                </div>
+              </div>
+            </motion.div>
+            
+            <motion.div 
+              className="bg-background/80 rounded-lg shadow-lg p-8 border border-shivayan-purple/10"
+              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <h3 className="text-marathi text-2xl font-bold mb-4 text-foreground">ग्राहक विश्वास आणि निष्ठा</h3>
+              <p className="text-foreground/80 mb-6">Customer Trust and Loyalty in Marathi</p>
+              <div className="space-y-4">
+                <div className="flex items-center">
+                  <div className="p-2 bg-shivayan-gold/10 rounded-full mr-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-shivayan-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                      <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                  </div>
+                  <span className="text-marathi">१०० % ग्राहक समाधान</span>
+                </div>
+                <div className="flex items-center">
+                  <div className="p-2 bg-shivayan-gold/10 rounded-full mr-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-shivayan-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                      <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                  </div>
+                  <span className="text-marathi">निरंतर सहाय्य</span>
+                </div>
+                <div className="flex items-center">
+                  <div className="p-2 bg-shivayan-gold/10 rounded-full mr-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-shivayan-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                      <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                  </div>
+                  <span className="text-marathi">निष्ठा कार्यक्रम फायदे</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+          
+          <div className="mt-12 text-center">
+            <motion.div 
+              className="inline-flex flex-wrap justify-center gap-4"
+              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <span className="text-cursive text-xl px-4 py-2 bg-shivayan-purple/5 rounded-full">Power</span>
+              <span className="text-hindi text-xl px-4 py-2 bg-shivayan-gold/5 rounded-full">शक्ति</span>
+              <span className="text-marathi text-xl px-4 py-2 bg-shivayan-orange/5 rounded-full">प्रगती</span>
+              <span className="text-decorative text-xl px-4 py-2 bg-shivayan-cyan/5 rounded-full">Innovation</span>
+              <span className="text-sanskrit text-xl px-4 py-2 bg-shivayan-purple/5 rounded-full">उत्कृष्टता</span>
+            </motion.div>
+          </div>
         </div>
       </Section>
 
