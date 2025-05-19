@@ -22,7 +22,7 @@ const Index = () => {
   useScrollAnimations();
   
   useEffect(() => {
-    // Text reveal animation for features
+    // Features animation
     const featuresItems = document.querySelectorAll('.feature-item');
     featuresItems.forEach((item, index) => {
       gsap.fromTo(item,
@@ -40,9 +40,9 @@ const Index = () => {
       );
     });
     
-    // Typography animations
-    const typographyItems = document.querySelectorAll('.typography-item');
-    typographyItems.forEach((item, i) => {
+    // Trust indicators animation
+    const trustItems = document.querySelectorAll('.trust-item');
+    trustItems.forEach((item, i) => {
       gsap.fromTo(item,
         { opacity: 0, y: 30 },
         { 
@@ -102,16 +102,48 @@ const Index = () => {
       );
     }
     
+    // Products animation
+    const productItems = document.querySelectorAll('.product-item');
+    productItems.forEach((item, i) => {
+      gsap.fromTo(item,
+        { opacity: 0, scale: 0.9 },
+        { 
+          opacity: 1,
+          scale: 1,
+          duration: 0.6,
+          delay: i * 0.15,
+          scrollTrigger: {
+            trigger: item,
+            start: "top 85%",
+          }
+        }
+      );
+    });
+    
+    // Loyalty benefits animation
+    const loyaltyItems = document.querySelectorAll('.loyalty-item');
+    loyaltyItems.forEach((item, i) => {
+      gsap.fromTo(item,
+        { opacity: 0, x: -20 },
+        { 
+          opacity: 1,
+          x: 0,
+          duration: 0.5,
+          delay: i * 0.1,
+          scrollTrigger: {
+            trigger: item,
+            start: "top 88%",
+          }
+        }
+      );
+    });
+    
   }, []);
 
   const features = [
     {
       title: "Innovative Solutions",
       description: "Combining cutting-edge technology with creative thinking to solve complex problems."
-    },
-    {
-      title: "Cultural Heritage",
-      description: "Drawing wisdom and values from India's rich cultural traditions."
     },
     {
       title: "Expert Team",
@@ -124,50 +156,67 @@ const Index = () => {
     {
       title: "Continuous Growth",
       description: "Constantly evolving our skills and knowledge to stay ahead in technology."
-    },
-    {
-      title: "Global Perspective",
-      description: "Bringing international expertise while honoring our cultural roots."
     }
   ];
-
-  // Typography examples
-  const typographyExamples = [
+  
+  const products = [
     {
-      text: "Innovation",
-      translation: "नवाचार",
-      fontClass: "font-cursive",
-      description: "Creative thinking and new ideas"
+      title: "Enterprise Solutions",
+      description: "Comprehensive software platforms designed for large-scale business operations.",
+      icon: "💼"
     },
     {
-      text: "Heritage",
-      translation: "विरासत",
-      fontClass: "font-calligraphy",
-      description: "Honoring our traditions"
+      title: "Cloud Services",
+      description: "Scalable, secure cloud infrastructure and applications for modern businesses.",
+      icon: "☁️"
     },
     {
-      text: "Excellence",
-      translation: "उत्कृष्टता",
-      fontClass: "font-marathi",
-      description: "Commitment to quality"
+      title: "AI Implementations",
+      description: "Custom artificial intelligence solutions that drive automation and insights.",
+      icon: "🤖"
     },
     {
-      text: "Creativity",
-      translation: "रचनात्मकता",
-      fontClass: "font-hindi",
-      description: "Imaginative solutions"
+      title: "Mobile Applications",
+      description: "Native and cross-platform mobile apps with exceptional user experience.",
+      icon: "📱"
+    }
+  ];
+  
+  const trustFactors = [
+    {
+      title: "10+ Years Experience",
+      description: "A decade of excellence in software development and IT consulting."
     },
     {
-      text: "Wisdom",
-      translation: "ज्ञान",
-      fontClass: "font-sanskrit",
-      description: "Ancient knowledge"
+      title: "500+ Successful Projects",
+      description: "Hundreds of projects delivered on time and within budget."
     },
     {
-      text: "Harmony",
-      translation: "सामंजस्य",
-      fontClass: "font-decorative",
-      description: "Balance in all things"
+      title: "99% Client Retention",
+      description: "Our clients stay with us because of our consistent quality and service."
+    },
+    {
+      title: "24/7 Support",
+      description: "Round-the-clock technical support for all our solutions."
+    }
+  ];
+  
+  const loyaltyBenefits = [
+    {
+      title: "Priority Support",
+      description: "Dedicated support team with faster response times."
+    },
+    {
+      title: "Free Upgrades",
+      description: "Regular software updates and enhancements at no extra cost."
+    },
+    {
+      title: "Exclusive Training",
+      description: "Special access to training sessions and educational resources."
+    },
+    {
+      title: "Partnership Rewards",
+      description: "Special discounts on new services and products."
     }
   ];
 
@@ -211,7 +260,7 @@ const Index = () => {
     <>
       <SEO 
         title="Shivayan Enterprises - Innovation Meets Heritage" 
-        description="A forward-thinking software development and IT consulting company blending modern technology with timeless Indian heritage values."
+        description="A forward-thinking software development and IT consulting company providing powerful enterprise solutions, cloud services, and AI implementations."
       />
 
       {/* Hero Section */}
@@ -255,7 +304,7 @@ const Index = () => {
             variants={fadeInUp}
           >
             Where <TypewriterText text="Innovation" className="text-shivayan-gold font-bold" /> Meets 
-            <TypewriterText text=" Heritage" delay={1000} className="text-shivayan-gold font-bold" />
+            <TypewriterText text=" Power" delay={1000} className="text-shivayan-gold font-bold" />
           </motion.p>
           
           <motion.div
@@ -332,6 +381,47 @@ const Index = () => {
         </div>
       </Section>
 
+      {/* Products Section */}
+      <Section className="bg-gradient-to-br from-shivayan-purple/10 to-shivayan-gold/10">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <ScrollReveal>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-orange-yellow">
+                <WaveText text="Our Premium Products" />
+              </h2>
+            </ScrollReveal>
+            <ScrollReveal delay={0.2}>
+              <p className="text-lg max-w-2xl mx-auto text-foreground/80">
+                Explore our comprehensive suite of enterprise-grade solutions designed to transform your business
+              </p>
+            </ScrollReveal>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {products.map((product, index) => (
+              <ScrollReveal 
+                key={index}
+                delay={index * 0.1}
+              >
+                <div className="product-item bg-background/70 backdrop-blur-sm p-8 rounded-lg shadow-lg border border-shivayan-purple/10 hover:border-shivayan-gold/30 transition-all duration-300 hover:-translate-y-1">
+                  <div className="text-4xl mb-4">{product.icon}</div>
+                  <h3 className="text-xl font-bold mb-3">{product.title}</h3>
+                  <p className="text-foreground/70">{product.description}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+          
+          <ScrollReveal direction="up" delay={0.5} className="mt-10 text-center">
+            <Link to="/solutions">
+              <CustomButton variant="secondary">
+                View All Solutions
+              </CustomButton>
+            </Link>
+          </ScrollReveal>
+        </div>
+      </Section>
+
       {/* Features Section */}
       <Section className="bg-background py-20">
         <div className="container mx-auto px-4">
@@ -348,7 +438,7 @@ const Index = () => {
             </ScrollReveal>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-16">
             {features.map((feature, index) => (
               <ScrollReveal 
                 key={index}
@@ -367,7 +457,7 @@ const Index = () => {
             ))}
           </div>
           
-          <ScrollReveal direction="up" delay={0.5} className="mt-16 text-center">
+          <ScrollReveal direction="up" delay={0.5} className="text-center">
             <Link to="/contact">
               <CustomButton variant="secondary">
                 Contact Us Today
@@ -376,42 +466,65 @@ const Index = () => {
           </ScrollReveal>
         </div>
       </Section>
-
-      {/* Cultural Typography Section */}
+      
+      {/* Trust Factors Section */}
+      <Section className="bg-shivayan-dark-purple text-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <ScrollReveal>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-shivayan-gold">
+                <TypewriterText text="Trusted by Businesses Worldwide" speed={70} />
+              </h2>
+            </ScrollReveal>
+            <ScrollReveal delay={0.2}>
+              <p className="text-xl max-w-2xl mx-auto text-white/80 mb-12">
+                Our track record speaks for itself
+              </p>
+            </ScrollReveal>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {trustFactors.map((factor, index) => (
+              <div key={index} className="trust-item text-center">
+                <h3 className="text-2xl md:text-3xl font-bold mb-2 text-shivayan-gold">{factor.title}</h3>
+                <p className="text-white/80">{factor.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+      
+      {/* Loyalty Benefits Section */}
       <Section className="bg-gradient-to-br from-shivayan-purple/5 to-shivayan-gold/5">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <ScrollReveal>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-purple-gold">
-                <TypewriterText text="Cultural Typography" speed={50} />
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-cyan-purple">
+                <WaveText text="Loyalty Program Benefits" />
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <p className="text-lg max-w-2xl mx-auto text-foreground/80">
-                Our design philosophy bridges cultures and traditions through typography, celebrating the rich linguistic heritage of India alongside modern global design.
+                We reward long-term partnerships with exclusive benefits and privileges
               </p>
             </ScrollReveal>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {typographyExamples.map((example, index) => (
-              <div key={index} className="typography-item">
-                <motion.div
-                  className="bg-card p-8 rounded-lg shadow-lg border border-shivayan-purple/10 hover:border-shivayan-gold transition-all duration-300"
-                  whileHover={{ 
-                    scale: 1.03,
-                    boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)"
-                  }}
-                >
-                  <div className={`text-3xl mb-2 ${example.fontClass}`}>
-                    {example.text}
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {loyaltyBenefits.map((benefit, index) => (
+              <ScrollReveal key={index} delay={index * 0.1}>
+                <div className="loyalty-item flex items-start p-4 bg-background/50 rounded-lg border border-shivayan-purple/10">
+                  <div className="mr-4 mt-1 text-shivayan-gold">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
                   </div>
-                  <div className="text-2xl mb-4 font-hindi text-shivayan-purple">
-                    {example.translation}
+                  <div>
+                    <h3 className="text-lg font-bold mb-1">{benefit.title}</h3>
+                    <p className="text-foreground/70">{benefit.description}</p>
                   </div>
-                  <p className="text-foreground/80">{example.description}</p>
-                </motion.div>
-              </div>
+                </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>

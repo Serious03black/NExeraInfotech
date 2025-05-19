@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -14,7 +15,8 @@ const Home = () => {
   const servicesRef = useRef<HTMLDivElement>(null);
   const testimonialRef = useRef<HTMLDivElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
-  const typographyRef = useRef<HTMLDivElement>(null);
+  const productsRef = useRef<HTMLDivElement>(null);
+  const trustRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Services section animation
@@ -36,21 +38,41 @@ const Home = () => {
         }
       );
     }
-
-    // Typography animation
-    if (typographyRef.current) {
-      const typographyItems = typographyRef.current.querySelectorAll('.typography-item');
+    
+    // Products animation
+    if (productsRef.current) {
+      const productItems = productsRef.current.querySelectorAll('.product-item');
       
-      gsap.fromTo(typographyItems, 
+      gsap.fromTo(productItems, 
+        { scale: 0.9, opacity: 0 }, 
+        { 
+          scale: 1, 
+          opacity: 1, 
+          stagger: 0.15,
+          duration: 0.6,
+          ease: "back.out(1.7)",
+          scrollTrigger: {
+            trigger: productsRef.current,
+            start: "top 80%",
+          }
+        }
+      );
+    }
+    
+    // Trust section animation
+    if (trustRef.current) {
+      const trustItems = trustRef.current.querySelectorAll('.trust-item');
+      
+      gsap.fromTo(trustItems, 
         { y: 30, opacity: 0 }, 
         { 
           y: 0, 
           opacity: 1, 
           stagger: 0.1,
-          duration: 0.8,
-          ease: "power2.out",
+          duration: 0.7,
+          ease: "power3.out",
           scrollTrigger: {
-            trigger: typographyRef.current,
+            trigger: trustRef.current,
             start: "top 80%",
           }
         }
@@ -136,48 +158,55 @@ const Home = () => {
     }
   ];
 
-  const typographyExamples = [
+  const products = [
     {
-      text: "Innovation",
-      translation: "नवाचार",
-      fontClass: "font-cursive",
-      language: "English/Hindi",
-      description: "Creative thinking and new ideas"
+      title: "Enterprise Management Suite",
+      description: "Comprehensive software platform for managing all aspects of enterprise operations.",
+      category: "Enterprise"
     },
     {
-      text: "Heritage",
-      translation: "विरासत",
-      fontClass: "font-calligraphy",
-      language: "English/Hindi",
-      description: "Honoring our traditions"
+      title: "ShivaCloud Platform",
+      description: "Our flagship cloud platform offering scalable infrastructure and services.",
+      category: "Cloud"
     },
     {
-      text: "Excellence",
-      translation: "उत्कृष्टता",
-      fontClass: "font-marathi",
-      language: "English/Marathi",
-      description: "Commitment to quality"
+      title: "AI Insights Engine",
+      description: "Advanced analytics and AI-powered decision-making tools for businesses.",
+      category: "AI"
     },
     {
-      text: "Creativity",
-      translation: "रचनात्मकता",
-      fontClass: "font-hindi",
-      language: "English/Hindi",
-      description: "Imaginative solutions"
+      title: "SecureConnect",
+      description: "End-to-end encrypted communication and collaboration platform for teams.",
+      category: "Security"
     },
     {
-      text: "Wisdom",
-      translation: "ज्ञान",
-      fontClass: "font-sanskrit",
-      language: "English/Sanskrit",
-      description: "Ancient knowledge"
+      title: "MobileWorks Pro",
+      description: "Enterprise-grade mobile application development framework.",
+      category: "Mobile"
     },
     {
-      text: "Harmony",
-      translation: "सामंजस्य",
-      fontClass: "font-decorative",
-      language: "English/Hindi",
-      description: "Balance in all things"
+      title: "DataFlow Analytics",
+      description: "Real-time data processing and visualization platform.",
+      category: "Analytics"
+    }
+  ];
+
+  const trustFactors = [
+    {
+      title: "ISO Certified",
+      description: "We adhere to international standards for quality and security."
+    },
+    {
+      title: "GDPR Compliant",
+      description: "All our processes and products comply with data protection regulations."
+    },
+    {
+      title: "24/7 Support",
+      description: "Our dedicated team is available round-the-clock for any assistance."
+    },
+    {
+      title: "Secure Infrastructure",
+      description: "Built-in security at every layer of our technology stack."
     }
   ];
 
@@ -226,7 +255,7 @@ const Home = () => {
               transition={{ duration: 0.6 }}
             >
               <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-                Where <span className="text-gradient-orange-yellow">Innovation</span> Meets <span className="text-gradient-orange-yellow">Heritage</span>
+                Where <span className="text-gradient-orange-yellow">Power</span> Meets <span className="text-gradient-orange-yellow">Innovation</span>
               </h1>
             </motion.div>
             
@@ -236,7 +265,7 @@ const Home = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <p className="text-xl md:text-2xl text-white/90 mb-8">
-                Building cutting-edge software solutions that blend modern technology with the timeless wisdom of Indian heritage.
+                Building cutting-edge enterprise software solutions that drive business growth and transformation.
               </p>
             </motion.div>
 
@@ -290,8 +319,8 @@ const Home = () => {
         </motion.div>
       </div>
 
-      {/* Cultural Typography Section */}
-      <Section className="bg-gradient-to-br from-shivayan-purple/5 to-shivayan-gold/5">
+      {/* Products Showcase Section */}
+      <Section className="bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <motion.h2
@@ -301,7 +330,7 @@ const Home = () => {
               transition={{ duration: 0.6 }}
               className="text-3xl md:text-4xl font-bold mb-6 text-gradient-purple-gold"
             >
-              Cultural Typography
+              Our Premium Products
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -310,30 +339,80 @@ const Home = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-lg max-w-2xl mx-auto text-foreground/80"
             >
-              Our design philosophy bridges cultures and traditions through typography, celebrating the rich linguistic heritage of India alongside modern global design.
+              Powerful enterprise solutions designed to transform your business operations and drive growth
             </motion.p>
           </div>
 
-          <div ref={typographyRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {typographyExamples.map((example, index) => (
-              <div key={index} className="typography-item">
+          <div ref={productsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {products.map((product, index) => (
+              <div key={index} className="product-item">
                 <motion.div
-                  className="bg-card p-8 rounded-lg shadow-lg border border-shivayan-purple/10 hover:border-shivayan-gold transition-all duration-300"
+                  className="bg-card p-8 rounded-lg shadow-lg border border-shivayan-purple/10 hover:border-shivayan-gold transition-all duration-300 h-full"
                   whileHover={{ 
                     scale: 1.03,
                     boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)"
                   }}
                 >
-                  <div className={`text-3xl mb-2 ${example.fontClass}`}>
-                    {example.text}
+                  <div className="inline-block px-3 py-1 mb-4 text-xs font-semibold bg-shivayan-purple/10 text-shivayan-purple rounded-full">
+                    {product.category}
                   </div>
-                  <div className="text-2xl mb-4 font-hindi text-shivayan-purple">
-                    {example.translation}
+                  <h3 className="text-xl font-bold mb-2">{product.title}</h3>
+                  <p className="text-foreground/80">{product.description}</p>
+                </motion.div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="mt-10 text-center">
+            <Link to="/solutions">
+              <CustomButton variant="secondary">
+                Explore All Products
+              </CustomButton>
+            </Link>
+          </div>
+        </div>
+      </Section>
+
+      {/* Trust & Reliability Section */}
+      <Section className="bg-gradient-to-br from-shivayan-purple/5 to-shivayan-gold/5">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-3xl md:text-4xl font-bold mb-6 text-gradient-cyan-purple"
+            >
+              Trust & Reliability
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-lg max-w-2xl mx-auto text-foreground/80"
+            >
+              Our commitment to security, quality, and dependability is at the core of everything we do
+            </motion.p>
+          </div>
+
+          <div ref={trustRef} className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {trustFactors.map((factor, index) => (
+              <div key={index} className="trust-item">
+                <motion.div
+                  className="bg-background/80 p-6 rounded-lg border border-shivayan-purple/10 shadow-md"
+                  whileHover={{ y: -5 }}
+                >
+                  <div className="flex items-center mb-4">
+                    <div className="p-3 bg-shivayan-purple/10 rounded-full text-shivayan-purple mr-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold">{factor.title}</h3>
                   </div>
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-sm text-foreground/70">{example.language}</span>
-                  </div>
-                  <p className="text-foreground/80">{example.description}</p>
+                  <p className="text-foreground/70">{factor.description}</p>
                 </motion.div>
               </div>
             ))}
@@ -504,7 +583,7 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Partner with Shivayan Enterprises and experience the perfect blend of innovation, expertise, and cultural values.
+            Partner with Shivayan Enterprises and experience the perfect blend of innovation, expertise, and proven solutions.
           </motion.p>
           
           <motion.div
