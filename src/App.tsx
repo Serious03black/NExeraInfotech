@@ -8,6 +8,9 @@ import { AnimatePresence } from "framer-motion";
 import { HelmetProvider } from "react-helmet-async";
 import { ThemeProvider } from "@/components/theme-provider";
 import { useEffect } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/react"
+import { Analytics } from "@vercel/analytics/next"
+
 
 // Layout components
 import Layout from "@/components/layout/Layout";
@@ -55,6 +58,8 @@ const AppRoutes = () => {
           <Route path="/faq" element={<Faq />} />
           <Route path="/legal" element={<Legal />} />
           <Route path="*" element={<NotFound />} />
+          <SpeedInsights/>
+          <Analytics/>
         </Route>
       </Routes>
     </AnimatePresence>
