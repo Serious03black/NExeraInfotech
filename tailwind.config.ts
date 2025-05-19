@@ -85,6 +85,11 @@ export default {
 				marathi: ['Martel', 'serif'],
 				hindi: ['Hind', 'sans-serif'],
 				sanskrit: ['Yatra One', 'cursive'],
+				playfair: ['Playfair Display', 'serif'],
+				montserrat: ['Montserrat', 'sans-serif'],
+				quicksand: ['Quicksand', 'sans-serif'],
+				abril: ['Abril Fatface', 'cursive'],
+				cormorant: ['Cormorant Garamond', 'serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

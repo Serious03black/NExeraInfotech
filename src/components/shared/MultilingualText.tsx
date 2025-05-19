@@ -8,7 +8,7 @@ interface MultilingualTextProps {
     text: string;
     language: string;
     className?: string;
-    fontFamily?: 'sans' | 'heading' | 'cursive' | 'calligraphy' | 'marathi' | 'hindi' | 'sanskrit' | 'playfair' | 'montserrat' | 'quicksand' | 'abril' | 'cormorant' | 'decorative';
+    fontFamily?: 'sans' | 'heading' | 'cursive' | 'calligraphy' | 'marathi' | 'hindi' | 'sanskrit' | 'playfair' | 'montserrat' | 'quicksand' | 'abril' | 'cormorant' | 'decorative' | 'display';
   }[];
   interval?: number;
   className?: string;
@@ -75,17 +75,18 @@ const MultilingualText = ({
     switch (fontFamily) {
       case 'sans': return 'font-sans';
       case 'heading': return 'font-heading';
+      case 'display': return 'font-display';
       case 'cursive': return 'font-cursive';
       case 'calligraphy': return 'font-calligraphy';
       case 'marathi': return 'font-marathi';
       case 'hindi': return 'font-hindi';
       case 'sanskrit': return 'font-sanskrit';
-      case 'playfair': return 'text-playfair';
-      case 'montserrat': return 'text-montserrat';
-      case 'quicksand': return 'text-quicksand';
-      case 'abril': return 'text-abril';
-      case 'cormorant': return 'text-cormorant';
-      case 'decorative': return 'text-decorative';
+      case 'playfair': return 'font-playfair';
+      case 'montserrat': return 'font-montserrat';
+      case 'quicksand': return 'font-quicksand';
+      case 'abril': return 'font-abril';
+      case 'cormorant': return 'font-cormorant';
+      case 'decorative': return 'font-decorative';
       default: return '';
     }
   };
