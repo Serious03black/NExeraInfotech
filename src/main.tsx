@@ -6,8 +6,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import './utils/SplitText';
-import { SpeedInsights } from "@vercel/speed-insights/react"
-import { Analytics } from "@vercel/analytics/next"
 
 // Register GSAP plugins globally
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
@@ -20,8 +18,6 @@ if (rootElement) {
 
 // Initialize smooth scrolling after the app is mounted
 document.addEventListener('DOMContentLoaded', () => {
-  <SpeedInsights/>
-  <Analytics/>
   // Set up smooth scrolling behavior for all internal links
   document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
