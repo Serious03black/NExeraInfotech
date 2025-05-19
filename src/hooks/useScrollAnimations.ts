@@ -175,6 +175,62 @@ const useScrollAnimations = ({
       });
     });
 
+    // Create a separate floating animation for elements with the floating class
+    const floatingElements = document.querySelectorAll('.floating-element');
+    floatingElements.forEach((element, index) => {
+      gsap.to(element, {
+        y: `-${5 + Math.random() * 10}px`,
+        duration: 2 + Math.random() * 2,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+        delay: index * 0.2
+      });
+    });
+
+    // Create wave effect for wave elements
+    const waveElements = document.querySelectorAll('.wave-element');
+    waveElements.forEach((element, index) => {
+      gsap.to(element, {
+        rotation: index % 2 === 0 ? 5 : -5,
+        duration: 3 + Math.random() * 2,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+        delay: index * 0.1
+      });
+    });
+    
+    // Create a special ink spread effect for calligraphy text
+    const inkElements = document.querySelectorAll('.ink-spread');
+    inkElements.forEach((element) => {
+      // Create an entering animation
+      gsap.fromTo(element,
+        { 
+          opacity: 0, 
+          scale: 0.9,
+          filter: 'blur(5px)'
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          filter: 'blur(0px)',
+          duration: 1.2,
+          scrollTrigger: getScrollTriggerConfig(element),
+          ease: "power3.out"
+        }
+      );
+      
+      // Add a subtle pulsing effect
+      gsap.to(element, {
+        filter: 'drop-shadow(0 0 5px rgba(126, 87, 194, 0.5))',
+        duration: 2,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut"
+      });
+    });
+
     // Cleanup function
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
