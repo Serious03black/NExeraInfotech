@@ -62,25 +62,25 @@ const Solutions = () => {
       title: "Healthcare",
       description: "Comprehensive digital solutions for modern healthcare providers, improving patient care and operational efficiency.",
       calligraphyText: "Healing",
-      hindiFontText: "स्वास्थ्य"
+      
     },
     {
       title: "Finance",
       description: "Secure, scalable financial technology that transforms traditional banking into innovative digital experiences.",
       calligraphyText: "Prosperity",
-      hindiFontText: "समृद्धि"
+  
     },
     {
       title: "Education",
       description: "Interactive learning platforms that make education more accessible, engaging, and effective for all.",
       calligraphyText: "Knowledge",
-      hindiFontText: "ज्ञान"
+     
     },
     {
       title: "Retail",
       description: "Omnichannel commerce solutions that create seamless shopping experiences across physical and digital touchpoints.",
       calligraphyText: "Commerce",
-      hindiFontText: "व्यापार"
+
     }
   ];
 

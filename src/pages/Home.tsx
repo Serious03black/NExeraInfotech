@@ -7,6 +7,7 @@ import CustomButton from '@/components/shared/CustomButton';
 import Section from '@/components/shared/Section';
 import SEO from '@/components/shared/SEO';
 import MultilingualText from '@/components/shared/MultilingualText';
+import image1 from "../../public/background.png";
 
 // Register ScrollTrigger with GSAP
 gsap.registerPlugin(ScrollTrigger);
@@ -20,24 +21,28 @@ const Home = () => {
 
   const multilingualTexts = [
     {
-      text: "उत्कृष्टता और नवाचार",
-      language: "Hindi",
-      className: "text-hindi text-2xl font-bold"
+      text: "Excellence and Innovation",
+      language: "English",
+      className: "text-2xl font-bold",
+      fontFamily: "display" as const
     },
     {
-      text: "उत्कृष्टता आणि नवकल्पना",
-      language: "Marathi",
-      className: "text-marathi text-2xl font-bold"
+      text: "Creative Design Solutions",
+      language: "English",
+      className: "text-2xl font-bold",
+      fontFamily: "sans" as const
     },
     {
       text: "Power & Innovation",
       language: "English",
-      className: "font-display text-2xl font-bold"
+      className: "text-2xl font-bold",
+      fontFamily: "playfair" as const
     },
     {
-      text: "शक्ति और नवाचार",
-      language: "Sanskrit",
-      className: "text-sanskrit text-2xl font-bold"
+      text: "Elegance & Excellence",
+      language: "English",
+      className: "text-2xl font-bold",
+      fontFamily: "quicksand" as const
     }
   ];
 
@@ -240,8 +245,11 @@ const Home = () => {
       {/* Hero Section */}
       <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background with gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-shivayan-dark-purple via-shivayan-purple to-shivayan-gold opacity-90"></div>
-        
+        <div className="absolute inset-0 bg-gradient-to-br from-shivayan-dark-purple via-shivayan-purple to-shivayan-gold opacity-50"></div>
+        <img className='opacity-100 ml-12 mb-20 relative'
+        src={image1}
+        alt=""
+         />
         {/* Animated background shapes */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
@@ -549,7 +557,7 @@ const Home = () => {
         </div>
       </Section>
 
-      {/* Multilingual Typography Showcase */}
+      {/* Typography Showcase */}
       <Section className="bg-gradient-to-br from-shivayan-purple/5 to-shivayan-gold/5">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -560,7 +568,7 @@ const Home = () => {
               transition={{ duration: 0.6 }}
               className="text-3xl md:text-4xl font-bold mb-6 text-gradient-cyan-purple"
             >
-              Global Excellence
+              Expressive Typography
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -569,7 +577,7 @@ const Home = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-lg max-w-2xl mx-auto text-foreground/80"
             >
-              Our services transcend languages and cultures to provide exceptional solutions worldwide
+              Our design system incorporates elegant typography to enhance communication
             </motion.p>
           </div>
 
@@ -581,8 +589,10 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h3 className="text-hindi text-2xl font-bold mb-4 text-foreground">उत्कृष्ट सेवाएं और उत्पाद</h3>
-              <p className="text-foreground/80 mb-6">Our Premium Services and Products in Hindi</p>
+              <h3 className="font-playfair text-2xl font-bold mb-4 text-foreground text-center">
+                Elegant Design Systems
+              </h3>
+              <p className="text-foreground/80 mb-6">Advanced interface design with premium typography</p>
               <div className="space-y-4">
                 <div className="flex items-center">
                   <div className="p-2 bg-shivayan-purple/10 rounded-full mr-3">
@@ -590,7 +600,7 @@ const Home = () => {
                       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                     </svg>
                   </div>
-                  <span className="text-hindi">सुरक्षित क्लाउड सेवाएं</span>
+                  <span className="font-abril">Premium Typography</span>
                 </div>
                 <div className="flex items-center">
                   <div className="p-2 bg-shivayan-purple/10 rounded-full mr-3">
@@ -598,7 +608,7 @@ const Home = () => {
                       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                     </svg>
                   </div>
-                  <span className="text-hindi">अभिनव एआई समाधान</span>
+                  <span className="font-cormorant">Elegant Layouts</span>
                 </div>
                 <div className="flex items-center">
                   <div className="p-2 bg-shivayan-purple/10 rounded-full mr-3">
@@ -606,7 +616,7 @@ const Home = () => {
                       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                     </svg>
                   </div>
-                  <span className="text-hindi">एंटरप्राइज़ प्लेटफॉर्म</span>
+                  <span className="font-montserrat">Modern Design</span>
                 </div>
               </div>
             </motion.div>
@@ -618,8 +628,10 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h3 className="text-marathi text-2xl font-bold mb-4 text-foreground">ग्राहक विश्वास आणि निष्ठा</h3>
-              <p className="text-foreground/80 mb-6">Customer Trust and Loyalty in Marathi</p>
+              <h3 className="font-quicksand text-2xl font-bold mb-4 text-foreground text-center">
+                Pristine User Experience
+              </h3>
+              <p className="text-foreground/80 mb-6">Thoughtful interfaces with clear communication</p>
               <div className="space-y-4">
                 <div className="flex items-center">
                   <div className="p-2 bg-shivayan-gold/10 rounded-full mr-3">
@@ -628,7 +640,7 @@ const Home = () => {
                       <polyline points="22 4 12 14.01 9 11.01"/>
                     </svg>
                   </div>
-                  <span className="text-marathi">१०० % ग्राहक समाधान</span>
+                  <span className="font-cursive">Intuitive Navigation</span>
                 </div>
                 <div className="flex items-center">
                   <div className="p-2 bg-shivayan-gold/10 rounded-full mr-3">
@@ -637,7 +649,7 @@ const Home = () => {
                       <polyline points="22 4 12 14.01 9 11.01"/>
                     </svg>
                   </div>
-                  <span className="text-marathi">निरंतर सहाय्य</span>
+                  <span className="font-calligraphy">Refined Aesthetics</span>
                 </div>
                 <div className="flex items-center">
                   <div className="p-2 bg-shivayan-gold/10 rounded-full mr-3">
@@ -646,7 +658,7 @@ const Home = () => {
                       <polyline points="22 4 12 14.01 9 11.01"/>
                     </svg>
                   </div>
-                  <span className="text-marathi">निष्ठा कार्यक्रम फायदे</span>
+                  <span className="font-decorative">Expressive Design</span>
                 </div>
               </div>
             </motion.div>
@@ -660,11 +672,11 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="text-cursive text-xl px-4 py-2 bg-shivayan-purple/5 rounded-full">Power</span>
-              <span className="text-hindi text-xl px-4 py-2 bg-shivayan-gold/5 rounded-full">शक्ति</span>
-              <span className="text-marathi text-xl px-4 py-2 bg-shivayan-orange/5 rounded-full">प्रगती</span>
-              <span className="text-decorative text-xl px-4 py-2 bg-shivayan-cyan/5 rounded-full">Innovation</span>
-              <span className="text-sanskrit text-xl px-4 py-2 bg-shivayan-purple/5 rounded-full">उत्कृष्टता</span>
+              <span className="font-cursive text-xl px-4 py-2 bg-shivayan-purple/5 rounded-full">Power</span>
+              <span className="font-playfair text-xl px-4 py-2 bg-shivayan-gold/5 rounded-full">Progress</span>
+              <span className="font-montserrat text-xl px-4 py-2 bg-shivayan-orange/5 rounded-full">Innovation</span>
+              <span className="font-decorative text-xl px-4 py-2 bg-shivayan-cyan/5 rounded-full">Creativity</span>
+              <span className="font-quicksand text-xl px-4 py-2 bg-shivayan-purple/5 rounded-full">Excellence</span>
             </motion.div>
           </div>
         </div>

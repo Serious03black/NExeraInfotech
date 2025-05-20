@@ -22,32 +22,7 @@ const About = () => {
   }, []);
 
   // Team members data
-  const teamMembers = [
-    {
-      name: "Arjun Sharma",
-      role: "Founder & CEO",
-      bio: "With over 20 years in technology leadership, Arjun combines technical expertise with cultural values to drive Shivayan's vision forward.",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-    },
-    {
-      name: "Priya Patel",
-      role: "CTO",
-      bio: "Priya leads our technical strategy and innovations, ensuring we stay at the cutting edge while delivering reliable solutions.",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80"
-    },
-    {
-      name: "Vikram Mehta",
-      role: "Head of Consulting",
-      bio: "Vikram brings strategic insight to our consulting practice, helping clients navigate complex technological challenges.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
-    },
-    {
-      name: "Anjali Desai",
-      role: "Design Director",
-      bio: "Anjali ensures that our solutions are not only functional but also aesthetically pleasing and user-friendly.",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
-    }
-  ];
+
 
   // Core values
   const coreValues = [
@@ -169,37 +144,6 @@ const About = () => {
                     <h3 className="text-2xl font-bold mb-3 text-gradient-cyan-purple">{value.title}</h3>
                     <p className="text-foreground/70">{value.description}</p>
                   </div>
-                </ScrollReveal>
-              ))}
-            </div>
-          </div>
-        </Section>
-
-        {/* Team Section */}
-        <Section className="team-section bg-gradient-to-br from-shivayan-dark-purple/5 to-shivayan-gold/5">
-          <div className="container mx-auto px-4">
-            <ScrollReveal>
-              <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-gradient-purple-gold animate-text">Meet Our Leadership</h2>
-            </ScrollReveal>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {teamMembers.map((member, index) => (
-                <ScrollReveal key={index} delay={index * 0.15} className="team-member">
-                  <div className="relative overflow-hidden rounded-lg mb-4 aspect-square">
-                    <motion.img 
-                      src={member.image} 
-                      alt={member.name}
-                      className="w-full h-full object-cover object-center" 
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ duration: 0.5 }}
-                    />
-                  </div>
-                  <AnimatedText 
-                    text={member.name}
-                    className="text-xl font-bold"
-                    type="simple"
-                  />
-                  <p className="text-shivayan-purple font-medium mb-2">{member.role}</p>
-                  <p className="text-sm text-foreground/70">{member.bio}</p>
                 </ScrollReveal>
               ))}
             </div>
