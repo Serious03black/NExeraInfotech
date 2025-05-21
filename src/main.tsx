@@ -2,13 +2,6 @@
 import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-import './utils/SplitText';
-
-// Register GSAP plugins globally
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 // Initialize app
 const rootElement = document.getElementById("root");
@@ -29,13 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const targetElement = document.getElementById(targetId);
         
         if (targetElement) {
-          gsap.to(window, {
-            duration: 1, 
-            scrollTo: {
-              y: targetElement,
-              offsetY: 80 // Offset for fixed header
-            },
-            ease: "power3.out"
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
           });
           
           // Update URL without reload

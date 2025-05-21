@@ -1,61 +1,26 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, Variants } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
-// Wave Text Animation - Characters wave in a flowing motion
+// Simple text display without animations
 export const WaveText: React.FC<{
   text: string;
   className?: string;
-  delay?: number;
-  duration?: number;
-}> = ({ text, className, delay = 0, duration = 0.05 }) => {
+}> = ({ text, className }) => {
   const characters = Array.from(text);
   
-  const container: Variants = {
-    hidden: {},
-    visible: (i = 1) => ({
-      transition: { staggerChildren: duration, delayChildren: delay * i }
-    }),
-  };
-  
-  const child: Variants = {
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        damping: 12,
-        stiffness: 100
-      }
-    },
-    hidden: {
-      opacity: 0,
-      y: 20,
-    }
-  };
-
   return (
-    <motion.span
-      className={cn("inline-block", className)}
-      variants={container}
-      initial="hidden"
-      animate="visible"
-    >
+    <span className={cn("inline-block", className)}>
       {characters.map((char, index) => (
-        <motion.span
-          key={index}
-          variants={child}
-          className="inline-block"
-        >
+        <span key={index} className="inline-block">
           {char === " " ? "\u00A0" : char}
-        </motion.span>
+        </span>
       ))}
-    </motion.span>
+    </span>
   );
 };
 
-// Typewriter effect - Types text character by character
+// Simplified typewriter effect
 export const TypewriterText: React.FC<{
   text: string;
   className?: string;
@@ -91,23 +56,19 @@ export const TypewriterText: React.FC<{
   return (
     <span className={cn("inline-block", className)}>
       {displayedText}
-      <motion.span
-        animate={{ opacity: [0, 1, 0] }}
-        transition={{ repeat: Infinity, duration: 0.8 }}
-        className="inline-block w-[2px] h-[1em] bg-current ml-[1px] align-middle"
-      />
+      <span className="inline-block w-[2px] h-[1em] bg-current ml-[1px] align-middle animate-pulse"/>
     </span>
   );
 };
 
-// Gradient text that moves/flows
+// Gradient text
 export const GradientFlowText: React.FC<{
   text: string;
   className?: string;
   gradientColors?: string;
 }> = ({ text, className, gradientColors = "from-shivayan-purple via-shivayan-gold to-shivayan-orange" }) => {
   return (
-    <span className={cn(`bg-gradient-to-r bg-clip-text text-transparent animate-gradient-flow bg-[size:200%]`, gradientColors, className)}>
+    <span className={cn(`bg-gradient-to-r bg-clip-text text-transparent`, gradientColors, className)}>
       {text}
     </span>
   );
@@ -126,59 +87,21 @@ export const HighlightWords: React.FC<{
     <span className={className}>
       {parts.map((part, i) => 
         highlight.some(word => part.toLowerCase() === word.toLowerCase())
-          ? <motion.span 
-              key={i} 
-              className={highlightClassName}
-              initial={{ backgroundColor: "rgba(255, 215, 0, 0.2)" }}
-              animate={{ backgroundColor: "rgba(255, 215, 0, 0)" }}
-              transition={{ duration: 1.5, delay: 0.5 }}
-            >
-              {part}
-            </motion.span>
+          ? <span key={i} className={highlightClassName}>{part}</span>
           : <span key={i}>{part}</span>
       )}
     </span>
   );
 };
 
-// Reveal text on scroll
+// Simplified reveal text component
 export const RevealText: React.FC<{
   text: string;
   className?: string;
 }> = ({ text, className }) => {
-  const ref = useRef<HTMLSpanElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-  
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-    
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-    
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-  
   return (
-    <span ref={ref} className={cn("inline-block overflow-hidden", className)}>
-      <motion.span
-        className="inline-block"
-        initial={{ y: '100%' }}
-        animate={isVisible ? { y: 0 } : { y: '100%' }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-      >
-        {text}
-      </motion.span>
+    <span className={cn("inline-block", className)}>
+      {text}
     </span>
   );
 };
