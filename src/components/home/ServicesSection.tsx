@@ -7,7 +7,7 @@ import Section from '@/components/shared/Section';
 interface Service {
   title: string;
   description: string;
-  icon: JSX.Element;
+  icon: React.FC; // Changed from JSX.Element to React.FC
 }
 
 interface ServicesSectionProps {
@@ -29,18 +29,22 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ services }) => {
       </div>
       
       <div ref={servicesRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {services.map((service, index) => (
-          <div 
-            key={index} 
-            className="service-item bg-background/50 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-shivayan-purple/10 hover:border-shivayan-gold/30 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-          >
-            <div className="text-shivayan-purple mb-4">
-              {service.icon}
+        {services.map((service, index) => {
+          const IconComponent = service.icon;
+          
+          return (
+            <div 
+              key={index} 
+              className="service-item bg-background/50 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-shivayan-purple/10 hover:border-shivayan-gold/30 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+            >
+              <div className="text-shivayan-purple mb-4">
+                <IconComponent />
+              </div>
+              <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+              <p className="text-foreground/70">{service.description}</p>
             </div>
-            <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-            <p className="text-foreground/70">{service.description}</p>
-          </div>
-        ))}
+          );
+        })}
       </div>
       
       <div className="mt-12 text-center">
