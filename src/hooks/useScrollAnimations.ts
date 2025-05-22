@@ -50,9 +50,6 @@ const useScrollAnimations = ({
           if (onlyOnce) {
             observer.unobserve(target);
           }
-        } else if (!onlyOnce) {
-          // Remove class when not in view if we want to repeat animations
-          entry.target.classList.remove('is-visible');
         }
       });
     };
