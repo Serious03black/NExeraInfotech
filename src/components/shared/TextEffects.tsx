@@ -20,7 +20,7 @@ export const WaveText: React.FC<{
   );
 };
 
-// Simplified typewriter effect
+// Simplified typewriter effect with reduced complexity
 export const TypewriterText: React.FC<{
   text: string;
   className?: string;
@@ -28,30 +28,29 @@ export const TypewriterText: React.FC<{
   delay?: number;
 }> = ({ text, className, speed = 40, delay = 0 }) => {
   const [displayedText, setDisplayedText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const timeoutRef = useRef<NodeJS.Timeout>();
-
+  
   useEffect(() => {
     setDisplayedText('');
-    setCurrentIndex(0);
+    let currentIndex = 0;
+    let timer: ReturnType<typeof setTimeout>;
+    
+    const typeNextChar = () => {
+      if (currentIndex < text.length) {
+        setDisplayedText(text.substring(0, currentIndex + 1));
+        currentIndex++;
+        timer = setTimeout(typeNextChar, speed);
+      }
+    };
+    
+    const startDelay = setTimeout(() => {
+      typeNextChar();
+    }, delay);
     
     return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      clearTimeout(startDelay);
+      clearTimeout(timer);
     };
-  }, [text]);
-
-  useEffect(() => {
-    if (currentIndex < text.length) {
-      timeoutRef.current = setTimeout(() => {
-        setDisplayedText(prev => prev + text[currentIndex]);
-        setCurrentIndex(prev => prev + 1);
-      }, currentIndex === 0 ? delay : speed);
-    }
-    
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
-  }, [currentIndex, text, speed, delay]);
+  }, [text, speed, delay]);
 
   return (
     <span className={cn("inline-block", className)}>
@@ -61,7 +60,7 @@ export const TypewriterText: React.FC<{
   );
 };
 
-// Gradient text
+// Optimized gradient text that uses CSS only
 export const GradientFlowText: React.FC<{
   text: string;
   className?: string;
@@ -74,7 +73,7 @@ export const GradientFlowText: React.FC<{
   );
 };
 
-// Emphasize specific words with a highlight effect
+// Simple text highlighting without animations
 export const HighlightWords: React.FC<{
   text: string;
   highlight: string[];
@@ -94,7 +93,7 @@ export const HighlightWords: React.FC<{
   );
 };
 
-// Simplified reveal text component
+// Simple reveal text
 export const RevealText: React.FC<{
   text: string;
   className?: string;

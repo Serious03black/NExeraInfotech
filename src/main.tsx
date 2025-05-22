@@ -9,9 +9,8 @@ if (rootElement) {
   createRoot(rootElement).render(<App />);
 }
 
-// Initialize smooth scrolling after the app is mounted
+// Simplified smooth scrolling with native browser API
 document.addEventListener('DOMContentLoaded', () => {
-  // Set up smooth scrolling behavior for all internal links
   document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
@@ -27,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
             block: 'start'
           });
           
-          // Update URL without reload
           history.pushState(null, '', href);
         }
       }

@@ -1,5 +1,5 @@
 
-import { useRef } from 'react';
+import React from 'react';
 
 interface AnimatedTextProps {
   text: string;
@@ -12,18 +12,21 @@ const AnimatedText = ({
   className = "", 
   type = 'simple'
 }: AnimatedTextProps) => {
-  const textRef = useRef<HTMLDivElement>(null);
-  
-  // For simple text, just render directly
+  // For simple text rendering (no animation)
   if (type === 'simple') {
+    return <div className={className}>{text}</div>;
+  }
+  
+  // For word-by-word animation
+  if (type === 'words') {
     const words = text.split(" ");
-    
     return (
       <div className={className}>
         {words.map((word, index) => (
           <span
             key={index}
-            className="inline-block mr-1"
+            className="inline-block mr-1 opacity-0 animate-[fadeIn_0.5s_ease_forwards]"
+            style={{ animationDelay: `${index * 0.1}s` }}
           >
             {word}
           </span>
@@ -31,10 +34,20 @@ const AnimatedText = ({
       </div>
     );
   }
-
+  
+  // For character-by-character animation
+  const characters = Array.from(text);
   return (
-    <div ref={textRef} className={className}>
-      {text}
+    <div className={className}>
+      {characters.map((char, index) => (
+        <span
+          key={index}
+          className="inline-block opacity-0 animate-[fadeIn_0.3s_ease_forwards]"
+          style={{ animationDelay: `${index * 0.04}s` }}
+        >
+          {char === " " ? "\u00A0" : char}
+        </span>
+      ))}
     </div>
   );
 };
