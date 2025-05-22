@@ -1,12 +1,7 @@
 
-import React, { useRef, useEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React from "react";
 import Section from "@/components/shared/Section";
 import ScrollReveal from "@/components/shared/ScrollReveal";
-
-// Register GSAP plugins
-gsap.registerPlugin(ScrollTrigger);
 
 interface ProcessStep {
   number: string;
@@ -16,30 +11,6 @@ interface ProcessStep {
 }
 
 const ProcessSteps: React.FC = () => {
-  const processRef = useRef<HTMLDivElement>(null);
-  
-  useEffect(() => {
-    // Process steps animation with horizontal scroll effect
-    if (processRef.current) {
-      const steps = processRef.current.querySelectorAll('.process-step');
-      
-      steps.forEach((step, index) => {
-        gsap.fromTo(step,
-          { x: index % 2 === 0 ? -50 : 50, opacity: 0 },
-          {
-            x: 0,
-            opacity: 1,
-            duration: 0.7,
-            scrollTrigger: {
-              trigger: step,
-              start: "top 80%",
-            }
-          }
-        );
-      });
-    }
-  }, []);
-
   const processSteps: ProcessStep[] = [
     {
       number: "01",
@@ -81,11 +52,14 @@ const ProcessSteps: React.FC = () => {
           </ScrollReveal>
         </div>
         
-        <div ref={processRef} className="max-w-5xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           {processSteps.map((step, index) => (
-            <div 
+            <ScrollReveal 
               key={index} 
-              className={`process-step flex flex-col md:flex-row items-start md:items-center gap-6 mb-16 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
+              delay={0.2 * (index + 1)}
+              direction={index % 2 === 0 ? 'left' : 'right'}
+              className={`flex flex-col md:flex-row items-start md:items-center gap-6 mb-16 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
+              width="100%"
             >
               <div className="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-shivayan-purple to-shivayan-gold rounded-full flex items-center justify-center">
                 <span className="text-white text-2xl font-bold">{step.number}</span>
@@ -94,7 +68,7 @@ const ProcessSteps: React.FC = () => {
                 <div className={`${step.fontClass} text-3xl mb-2 text-shivayan-purple`}>{step.title}</div>
                 <p className="text-lg text-foreground/80">{step.description}</p>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
