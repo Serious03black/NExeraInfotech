@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import CustomButton from '@/components/shared/CustomButton';
 import MultilingualText from '@/components/shared/MultilingualText';
+import image1 from "../../../public/background.png";
 
 interface HeroSectionProps {
   multilingualTexts: {
@@ -20,7 +21,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ multilingualTexts }) => {
       {/* Background with gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-shivayan-dark-purple via-shivayan-purple to-shivayan-gold opacity-50"></div>
       <img className='opacity-100 ml-12 mb-20 relative'
-      src="../../public/background.png"
+      src={image1}
       alt=""
        />
       {/* Animated background shapes */}
