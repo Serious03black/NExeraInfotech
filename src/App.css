@@ -26,8 +26,3 @@
 .read-the-docs {
   color: #888;
 }
-.text-gradient-rainbow {
-  background: linear-gradient(to right, #FF0000, #FFFF00, #00FFFF, #FF00FF);
-  background-clip: text;
-  color: transparent;
-}

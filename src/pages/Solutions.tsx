@@ -107,7 +107,7 @@ const Solutions = () => {
       number: "04",
       title: "Evolution",
       description: "We provide ongoing support and iterative improvements to ensure your solution grows with your business.",
-      fontClass: "font-marathi"
+      fontClass: "font-sans"
     }
   ];
 
@@ -144,9 +144,6 @@ const Solutions = () => {
                 <div className="mb-4 overflow-hidden">
                   <div className={`text-4xl font-calligraphy text-shivayan-purple mb-2`}>
                     {solution.calligraphyText}
-                  </div>
-                  <div className="text-xl font-hindi text-shivayan-gold">
-                    {solution.hindiFontText}
                   </div>
                 </div>
                 <h3 className="text-2xl font-bold mb-4">{solution.title}</h3>

@@ -12,13 +12,15 @@ interface MultilingualTextProps {
   interval?: number;
   className?: string;
   showLanguage?: boolean;
+  animationType?: 'fade' | 'slide' | 'none';
 }
 
 const MultilingualText = ({
   texts,
   interval = 5000,
   className,
-  showLanguage = false
+  showLanguage = false,
+  animationType = 'fade'
 }: MultilingualTextProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   
@@ -53,9 +55,17 @@ const MultilingualText = ({
   const currentText = texts[currentIndex];
   const fontClass = getFontClass(currentText.fontFamily);
 
+  const getAnimationClass = () => {
+    switch (animationType) {
+      case 'fade': return 'transition-opacity duration-500';
+      case 'slide': return 'transition-transform duration-500';
+      default: return '';
+    }
+  };
+
   return (
     <div className={cn("multilingual-text-wrapper", className)}>
-      <div className={cn("multilingual-text transition-opacity duration-500", currentText.className, fontClass)}>
+      <div className={cn("multilingual-text", currentText.className, fontClass, getAnimationClass())}>
         {currentText.text}
         {showLanguage && (
           <div className="mt-2 text-xs text-muted-foreground">{currentText.language}</div>
