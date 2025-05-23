@@ -20,7 +20,7 @@ export const WaveText: React.FC<{
   );
 };
 
-// New optimized wavy text transition effect
+// New optimized wavy text transition effect with improved performance
 export const WavyText: React.FC<{
   text: string;
   className?: string;
@@ -38,7 +38,7 @@ export const WavyText: React.FC<{
           className="inline-block wave-element"
           style={{ 
             animationDelay: `${delay + index * staggerDelay}s`,
-            animationDuration: `${duration}s`
+            animationDuration: `${duration + (index % 5) * 0.1}s` // Slight variation for more natural effect
           }}
         >
           {char === " " ? "\u00A0" : char}
@@ -121,6 +121,22 @@ export const HighlightWords: React.FC<{
   );
 };
 
+// Ink spread reveal effect for text
+export const InkRevealText: React.FC<{
+  text: string;
+  className?: string;
+  delay?: number;
+}> = ({ text, className, delay = 0 }) => {
+  return (
+    <span 
+      className={cn("inline-block ink-spread", className)}
+      style={{ animationDelay: `${delay}s` }}
+    >
+      {text}
+    </span>
+  );
+};
+
 // Simple reveal text
 export const RevealText: React.FC<{
   text: string;
@@ -139,5 +155,6 @@ export default {
   GradientFlowText,
   HighlightWords,
   RevealText,
-  WavyText
+  WavyText,
+  InkRevealText
 };

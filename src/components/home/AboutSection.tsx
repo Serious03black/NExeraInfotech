@@ -1,52 +1,76 @@
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import CustomButton from '@/components/shared/CustomButton';
 import Section from '@/components/shared/Section';
+import AnimatedText from '@/components/shared/AnimatedText';
 
 const AboutSection: React.FC = () => {
+  const textRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(textRef, { once: true, margin: "-100px" });
+  
   return (
     <Section className="bg-background">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div>
+        <div ref={textRef}>
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-purple-gold">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-purple-gold gsap-title">
               Who We Are
             </h2>
-            <p className="text-lg mb-6 text-foreground/80">
-              Shivayan Enterprises is a forward-thinking software development and IT consulting company that combines cutting-edge technology with the rich heritage and values of India.
-            </p>
-            <p className="text-lg mb-8 text-foreground/80">
+            
+            <AnimatedText
+              text="Shivayan Enterprises is a forward-thinking software development and IT consulting company that combines cutting-edge technology with the rich heritage and values of India."
+              type="wavy"
+              className="text-lg mb-6 text-foreground/80"
+              delay={0.2}
+              staggerDelay={0.02}
+            />
+            
+            <motion.p 
+              className="text-lg mb-8 text-foreground/80 gsap-paragraph"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
               We believe in creating software solutions that are not just efficient and innovative, but also built on the foundations of trust, respect, and excellence that are deeply rooted in our cultural ethos.
-            </p>
-            <Link to="/about">
-              <CustomButton 
-                variant="secondary" 
-                icon={
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                }
-              >
-                Learn More About Us
-              </CustomButton>
-            </Link>
+            </motion.p>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
+              <Link to="/about">
+                <CustomButton 
+                  variant="secondary" 
+                  icon={
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  }
+                >
+                  Learn More About Us
+                </CustomButton>
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
         
-        <div className="relative">
+        <div className="relative overflow-hidden">
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ 
+              duration: 1,
+              ease: [0.22, 1, 0.36, 1]
+            }}
           >
             <div className="relative">
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-shivayan-gold/30 rounded-full blur-xl"></div>
@@ -54,7 +78,11 @@ const AboutSection: React.FC = () => {
               <img 
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" 
                 alt="Shivayan team working together" 
-                className="w-full h-auto rounded-lg shadow-xl relative z-10" 
+                className="w-full h-auto rounded-lg shadow-xl relative z-10 gsap-image" 
+                style={{ 
+                  transform: "translateZ(0)",
+                  willChange: "transform, opacity"
+                }}
               />
             </div>
           </motion.div>
