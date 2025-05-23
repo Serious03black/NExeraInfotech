@@ -1,17 +1,27 @@
 
 import React from 'react';
+import { WavyText } from './TextEffects';
 
 interface AnimatedTextProps {
   text: string;
   className?: string;
-  type?: 'words' | 'chars' | 'simple';
+  type?: 'words' | 'chars' | 'simple' | 'wavy';
+  delay?: number;
+  staggerDelay?: number;
 }
 
 const AnimatedText = ({ 
   text, 
   className = "", 
-  type = 'simple'
+  type = 'simple',
+  delay = 0,
+  staggerDelay = 0.05
 }: AnimatedTextProps) => {
+  // For wavy text animation
+  if (type === 'wavy') {
+    return <WavyText text={text} className={className} delay={delay} staggerDelay={staggerDelay} />;
+  }
+  
   // For simple text rendering (no animation)
   if (type === 'simple') {
     return <div className={className}>{text}</div>;

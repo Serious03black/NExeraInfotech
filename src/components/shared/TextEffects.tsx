@@ -20,6 +20,34 @@ export const WaveText: React.FC<{
   );
 };
 
+// New optimized wavy text transition effect
+export const WavyText: React.FC<{
+  text: string;
+  className?: string;
+  delay?: number;
+  duration?: number;
+  staggerDelay?: number;
+}> = ({ text, className, delay = 0, duration = 0.4, staggerDelay = 0.05 }) => {
+  const characters = Array.from(text);
+  
+  return (
+    <span className={cn("inline-block overflow-hidden", className)}>
+      {characters.map((char, index) => (
+        <span 
+          key={index} 
+          className="inline-block wave-element"
+          style={{ 
+            animationDelay: `${delay + index * staggerDelay}s`,
+            animationDuration: `${duration}s`
+          }}
+        >
+          {char === " " ? "\u00A0" : char}
+        </span>
+      ))}
+    </span>
+  );
+};
+
 // Simplified typewriter effect with reduced complexity
 export const TypewriterText: React.FC<{
   text: string;
@@ -110,5 +138,6 @@ export default {
   TypewriterText,
   GradientFlowText,
   HighlightWords,
-  RevealText
+  RevealText,
+  WavyText
 };
