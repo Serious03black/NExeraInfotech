@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import CustomButton from '@/components/shared/CustomButton';
 import MultilingualText from '@/components/shared/MultilingualText';
+import { WavyText } from '@/components/shared/TextEffects';
 import image1 from "/background.png";
 
 interface HeroSectionProps {
@@ -36,7 +37,30 @@ const HeroSection: React.FC<HeroSectionProps> = ({ multilingualTexts }) => {
             transition={{ duration: 0.6 }}
           >
             <h1 className="font-display text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6">
-              WHERE <span className="text-shivayan-gold">POWER</span> MEETS <span className="text-shivayan-gold">INNOVATION</span>
+              <WavyText 
+                text="WHERE" 
+                delay={0.3}
+                staggerDelay={0.04}
+                className="mr-4"
+              />
+              <WavyText 
+                text="POWER" 
+                delay={0.6}
+                staggerDelay={0.04}
+                className="text-shivayan-gold mr-4"
+              />
+              <WavyText 
+                text="MEETS" 
+                delay={0.9}
+                staggerDelay={0.04}
+                className="mr-4"
+              />
+              <WavyText 
+                text="INNOVATION" 
+                delay={1.2}
+                staggerDelay={0.04}
+                className="text-shivayan-gold"
+              />
             </h1>
           </motion.div>
           
@@ -58,7 +82,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ multilingualTexts }) => {
             className="mb-12"
           >
             <h2 className="text-2xl md:text-3xl font-playfair text-white">
-              EXCELLENCE AND INNOVATION
+              <WavyText 
+                text="EXCELLENCE AND INNOVATION" 
+                delay={1.5}
+                staggerDelay={0.03}
+              />
             </h2>
           </motion.div>
 

@@ -1,3 +1,4 @@
+
 #root {
   width: 100%;
   margin: 0;
@@ -80,8 +81,12 @@
   animation: float 3s ease-in-out infinite;
 }
 
+/* Updated wave animation - performance optimized */
 .wave-element {
-  animation: wave 4s ease-in-out infinite;
+  display: inline-block;
+  animation: optimizedWave 2s ease-in-out infinite;
+  transform-origin: center;
+  will-change: transform;
 }
 
 .ink-spread {
@@ -101,10 +106,14 @@
   50% { transform: translateY(-10px); }
 }
 
-@keyframes wave {
-  0%, 100% { transform: rotate(0); }
-  25% { transform: rotate(5deg); }
-  75% { transform: rotate(-5deg); }
+/* New optimized wave animation with reduced calculations */
+@keyframes optimizedWave {
+  0%, 100% { 
+    transform: translateY(0); 
+  }
+  50% { 
+    transform: translateY(-5px); 
+  }
 }
 
 @keyframes inkSpread {
