@@ -10,6 +10,7 @@ import TypographySection from '@/components/home/TypographySection';
 import StatsSection from '@/components/home/StatsSection';
 import TestimonialSection from '@/components/home/TestimonialSection';
 import CtaSection from '@/components/home/CtaSection';
+import Services from '@/components/home/Services';
 import { multilingualTexts, services, products, trustFactors } from '@/components/home/data/homeData';
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
     <>
       <SEO title="Home" />
       <HeroSection multilingualTexts={multilingualTexts} />
+      <Services />
       <ProductsSection products={products} />
       <TrustSection trustFactors={trustFactors} />
       <AboutSection />
