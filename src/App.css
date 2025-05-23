@@ -85,19 +85,6 @@
   will-change: transform, opacity;
 }
 
-.floating-element {
-  animation: float 3s ease-in-out infinite;
-}
-
-/* Updated wave animation - performance optimized */
-.wave-element {
-  display: inline-block;
-  animation: optimizedWave 2s ease-in-out infinite;
-  transform-origin: center;
-  will-change: transform;
-  backface-visibility: hidden;
-  -webkit-font-smoothing: subpixel-antialiased;
-}
 
 .ink-spread {
   animation: inkSpread 1.2s ease-out forwards;
@@ -112,20 +99,8 @@
   }
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
 
 /* New optimized wave animation with reduced calculations and smoother transitions */
-@keyframes optimizedWave {
-  0% { transform: translateY(0); }
-  25% { transform: translateY(-3px); }
-  50% { transform: translateY(-5px); } 
-  75% { transform: translateY(-2px); }
-  100% { transform: translateY(0); }
-}
-
 @keyframes inkSpread {
   0% {
     opacity: 0;
