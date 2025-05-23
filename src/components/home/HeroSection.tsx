@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import CustomButton from '@/components/shared/CustomButton';
 import MultilingualText from '@/components/shared/MultilingualText';
-import image1 from "../../../public/background.png";
+import image1 from "/background.png";  // Updated path to correctly reference the image
 
 interface HeroSectionProps {
   multilingualTexts: {
@@ -20,10 +20,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ multilingualTexts }) => {
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background with gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-shivayan-dark-purple via-shivayan-purple to-shivayan-gold opacity-50"></div>
-      <img className='opacity-100 ml-12 mb-20 relative'
-      src={image1}
-      alt=""
-       />
+      
+      {/* Background image - positioning fixed */}
+      <img 
+        className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-overlay"
+        src={image1}
+        alt="Background pattern"
+      />
+      
       {/* Animated background shapes */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
