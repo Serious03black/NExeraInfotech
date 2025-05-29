@@ -83,31 +83,31 @@ const AppRoutes = () => {
               <Portfolio />
             </Suspense>
           } />
-          <Route path="/blog" element={
+          {/* <Route path="/blog" element={
             <Suspense fallback={<LoadingFallback />}>
               <Blog />
             </Suspense>
-          } />
-          <Route path="/careers" element={
+          } /> */}
+          {/* <Route path="/careers" element={
             <Suspense fallback={<LoadingFallback />}>
               <Careers />
             </Suspense>
-          } />
+          } /> */}
           <Route path="/contact" element={
             <Suspense fallback={<LoadingFallback />}>
               <Contact />
             </Suspense>
           } />
-          <Route path="/faq" element={
+          {/* <Route path="/faq" element={
             <Suspense fallback={<LoadingFallback />}>
               <Faq />
             </Suspense>
-          } />
-          <Route path="/legal" element={
+          } /> */}
+          {/* <Route path="/legal" element={
             <Suspense fallback={<LoadingFallback />}>
               <Legal />
             </Suspense>
-          } />
+          } /> */}
           <Route path="*" element={
             <Suspense fallback={<LoadingFallback />}>
               <NotFound />
