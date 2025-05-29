@@ -1,6 +1,6 @@
 
 #root {
-  max-width: 1280px;
+  max-width:100%;
   margin: 0 auto;
   /* padding: 2rem; */
   text-align: center;
@@ -78,13 +78,6 @@
   transform: scale(0.8) rotate(-5deg);
 }
 
-.floating-element {
-  animation: float 3s ease-in-out infinite;
-}
-
-.wave-element {
-  animation: wave 4s ease-in-out infinite;
-}
 
 .ink-spread {
   animation: inkSpread 1.2s ease-out forwards;
@@ -98,16 +91,7 @@
   }
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
 
-@keyframes wave {
-  0%, 100% { transform: rotate(0); }
-  25% { transform: rotate(5deg); }
-  75% { transform: rotate(-5deg); }
-}
 
 @keyframes inkSpread {
   0% {
