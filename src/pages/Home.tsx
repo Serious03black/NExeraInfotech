@@ -24,8 +24,8 @@ const Home = () => {
       <AboutSection />
       <ServicesSection services={services} />
       <TypographySection />
-      <StatsSection />
-      <TestimonialSection />
+      {/* <StatsSection /> */}
+      {/* <TestimonialSection /> */}
       <CtaSection />
     </>
   );

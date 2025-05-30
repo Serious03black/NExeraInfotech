@@ -81,17 +81,17 @@ const About = () => {
               <div className="space-y-6">
                 <ScrollReveal delay={0.1}>
                   <p className="text-lg text-foreground/80 animate-text">
-                    Founded in 2015, Shivayan Enterprises began with a vision to create technology solutions that blend modern innovation with timeless values from Indian heritage. Our name "Shivayan" combines elements representing transformation and journey, reflecting our commitment to guiding clients through their technological evolution.
+                    Founded in 2025, Shivayan Enterprises began with a vision to create technology solutions that blend modern innovation with timeless values from Indian heritage. Our name "Shivayan" combines elements representing transformation and journey, reflecting our commitment to guiding clients through their technological evolution.
                   </p>
                 </ScrollReveal>
                 <ScrollReveal delay={0.2}>
                   <p className="text-lg text-foreground/80 animate-text">
-                    Starting as a small team of passionate technologists in Bangalore, we've grown to become a global company with offices in India, the United States, and Singapore. Throughout our growth, we've maintained our founding principles: technical excellence, cultural wisdom, and client-centered service.
+                    Starting as a small team of passionate technologists in Maharatra, we've grown to become a global company with offices in India, the United States, and Singapore. Throughout our growth, we've maintained our founding principles: technical excellence, cultural wisdom, and client-centered service.
                   </p>
                 </ScrollReveal>
                 <ScrollReveal delay={0.3}>
                   <p className="text-lg text-foreground/80 animate-text">
-                    Today, Shivayan Enterprises serves clients across multiple industries, from startups to Fortune 500 companies. We take pride in our diverse, talented team that brings together different perspectives united by a shared commitment to innovation and excellence.
+                    Today, Shivayan Enterprises serves clients across multiple industries. We take pride in our diverse, talented team that brings together different perspectives united by a shared commitment to innovation and excellence.
                   </p>
                 </ScrollReveal>
               </div>
