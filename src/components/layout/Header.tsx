@@ -58,7 +58,7 @@ const Header = () => {
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
             <span className="font-display text-2xl font-bold text-gradient-purple-gold">
-              Shivayan
+              NexEra
             </span>
           </motion.div>
         </Link>
@@ -83,7 +83,7 @@ const Header = () => {
                   {link.name}
                   {isActive && (
                     <motion.span
-                      className="absolute bottom-0 left-0 h-0.5 w-full bg-shivayan-gold"
+                      className="absolute bottom-0 left-0 h-0.5 w-full bg-NexEra-gold"
                       layoutId="navbar-indicator"
                       transition={{ type: "spring", stiffness: 400, damping: 30 }}
                     />
@@ -150,8 +150,8 @@ const Header = () => {
                     cn(
                       "block px-3 py-2 rounded-md text-base font-medium transition-all duration-300",
                       isActive
-                        ? "bg-shivayan-purple/10 text-shivayan-purple"
-                        : "text-foreground hover:bg-shivayan-purple/5 hover:text-shivayan-purple"
+                        ? "bg-NexEra-purple/10 text-NexEra-purple"
+                        : "text-foreground hover:bg-NexEra-purple/5 hover:text-NexEra-purple"
                     )
                   }
                 >

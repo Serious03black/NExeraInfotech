@@ -26,7 +26,7 @@ const CtaSection: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          Partner with Shivayan Enterprises and experience the perfect blend of innovation, expertise, and proven solutions.
+          Partner with NexEra infotech and experience the perfect blend of innovation, expertise, and proven solutions.
         </motion.p>
         
         <motion.div

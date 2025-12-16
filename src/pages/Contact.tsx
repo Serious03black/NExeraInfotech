@@ -5,8 +5,8 @@ const Contact = () => {
   return (
     <>
       <SEO 
-        title="Contact Us - Shivayan Enterprises" 
-        description="Get in touch with Shivayan Enterprises for your software development and IT consulting needs."
+        title="Contact Us - NexEra infotech" 
+        description="Get in touch with NexEra infotech for your software development and IT consulting needs."
       />
       
       <PageHeader 
@@ -85,7 +85,7 @@ const Contact = () => {
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
                   <textarea 
                     id="message" 
-                    rows="4" 
+                    rows={4}
                     className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" 
                     placeholder="Your Message"
                   ></textarea>

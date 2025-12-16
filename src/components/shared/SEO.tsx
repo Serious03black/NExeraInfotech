@@ -12,13 +12,13 @@ interface SEOProps {
 
 const SEO = ({
   title,
-  description = "Shivayan Enterprises blends innovation with Indian heritage to provide cutting-edge software development and IT consulting services for businesses worldwide.",
+  description = "NexEra inotech blends innovation with Indian heritage to provide cutting-edge software development and IT consulting services for businesses worldwide.",
   keywords = "software development, IT consulting, AI solutions, cloud services, custom software, Indian tech company",
   ogImage = "https://shivayan.com/opengraph-image.png",
   ogUrl = "https://shivayan.com",
   ogType = "website",
 }: SEOProps) => {
-  const fullTitle = `${title} | Shivayan Enterprises`;
+  const fullTitle = `${title} | NexEra inotech`;
   
   return (
     <Helmet>

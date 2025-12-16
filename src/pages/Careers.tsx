@@ -7,12 +7,12 @@ const Careers = () => {
     <>
       <SEO 
         title="Careers" 
-        description="Join the innovative team at Shivayan Enterprises. Explore our current job openings and company culture."
+        description="Join the innovative team at NexEra infotech. Explore our current job openings and company culture."
       />
       
       <PageHeader 
         title="Join Our Team" 
-        subtitle="Explore Career Opportunities at Shivayan Enterprises"
+        subtitle="Explore Career Opportunities at NexEra infotech"
         backgroundImage="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
       />
 

@@ -115,7 +115,7 @@ const Solutions = () => {
     <>
       <SEO 
         title="Our Solutions" 
-        description="Discover industry-specific solutions designed by Shivayan Enterprises for healthcare, finance, retail, and more."
+        description="Discover industry-specific solutions designed by NexEra infotech for healthcare, finance, retail, and more."
       />
       
       <PageHeader 

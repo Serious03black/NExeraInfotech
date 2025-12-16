@@ -7,7 +7,7 @@ const Faq = () => {
     <>
       <SEO 
         title="FAQ" 
-        description="Find answers to frequently asked questions about Shivayan Enterprises' services, processes, and technologies."
+        description="Find answers to frequently asked questions about NexEra infotech' services, processes, and technologies."
       />
       
       <PageHeader 

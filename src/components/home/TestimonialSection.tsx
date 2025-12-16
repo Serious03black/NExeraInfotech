@@ -14,16 +14,16 @@ const TestimonialSection: React.FC = () => {
           </h2>
         </div>
         
-        <div className="bg-gradient-to-br from-shivayan-purple/5 to-shivayan-gold/5 p-8 md:p-12 rounded-2xl shadow-lg relative">
-          <div className="absolute -top-4 -left-4 text-6xl text-shivayan-gold opacity-50">❝</div>
-          <div className="absolute -bottom-4 -right-4 text-6xl text-shivayan-gold opacity-50 transform rotate-180">❝</div>
+        <div className="bg-gradient-to-br from-NexEra-purple/5 to-NexEra-gold/5 p-8 md:p-12 rounded-2xl shadow-lg relative">
+          <div className="absolute -top-4 -left-4 text-6xl text-NexEra-gold opacity-50">❝</div>
+          <div className="absolute -bottom-4 -right-4 text-6xl text-NexEra-gold opacity-50 transform rotate-180">❝</div>
           
           <blockquote className="text-lg md:text-xl italic text-foreground/90 mb-8 relative z-10">
-            Shivayan Enterprises transformed our business with their innovative software solutions. Their team's deep technical expertise combined with their understanding of our business needs led to a product that exceeded our expectations. What sets them apart is their commitment to excellence and the values they bring to every project.
+            NexEra infotech transformed our business with their innovative software solutions. Their team's deep technical expertise combined with their understanding of our business needs led to a product that exceeded our expectations. What sets them apart is their commitment to excellence and the values they bring to every project.
           </blockquote>
           
           <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 rounded-full bg-shivayan-purple/20 flex items-center justify-center text-shivayan-purple font-bold">
+            <div className="w-12 h-12 rounded-full bg-NexEra-purple/20 flex items-center justify-center text-NexEra-purple font-bold">
               AR
             </div>
             <div>
