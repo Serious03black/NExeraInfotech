@@ -202,7 +202,7 @@ const Services = () => {
     <>
       <SEO 
         title="Our Services" 
-        description="Explore the comprehensive range of software development and IT consulting services offered by NexEra infotech."
+        description="Explore the comprehensive range of software development and IT consulting services offered by R.S.infotech."
       />
       
       <PageHeader 
@@ -223,7 +223,7 @@ const Services = () => {
             <div className="max-w-3xl mx-auto text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-purple-gold">Empowering Your Business Through Technology</h2>
               <p className="text-lg text-foreground/80">
-                At NexEra infotech, we offer a comprehensive range of services designed to help businesses innovate, optimize, and transform through technology. Each service is delivered with our unique blend of technical expertise and cultural wisdom.
+                At R.S.infotech, we offer a comprehensive range of services designed to help businesses innovate, optimize, and transform through technology. Each service is delivered with our unique blend of technical expertise and cultural wisdom.
               </p>
             </div>
             

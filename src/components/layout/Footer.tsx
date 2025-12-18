@@ -27,7 +27,7 @@ const Footer = () => {
           >
             <Link to="/" className="inline-block">
               <span className="font-display text-2xl font-bold text-gradient-orange-yellow">
-                NexEra
+                R.S.
               </span>
             </Link>
             <p className="text-white/80 max-w-xs">
@@ -75,27 +75,27 @@ const Footer = () => {
             <h3 className="text-lg font-semibold">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-white/80 hover:text-NexEra-gold transition-colors duration-300">
+                <Link to="/" className="text-white/80 hover:text-R.S.-gold transition-colors duration-300">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-white/80 hover:text-NexEra-gold transition-colors duration-300">
+                <Link to="/about" className="text-white/80 hover:text-R.S.-gold transition-colors duration-300">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-white/80 hover:text-NexEra-gold transition-colors duration-300">
+                <Link to="/services" className="text-white/80 hover:text-R.S.-gold transition-colors duration-300">
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="/portfolio" className="text-white/80 hover:text-NexEra-gold transition-colors duration-300">
+                <Link to="/portfolio" className="text-white/80 hover:text-R.S.-gold transition-colors duration-300">
                   Portfolio
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-white/80 hover:text-NexEra-gold transition-colors duration-300">
+                <Link to="/contact" className="text-white/80 hover:text-R.S.-gold transition-colors duration-300">
                   Contact
                 </Link>
               </li>
@@ -112,22 +112,22 @@ const Footer = () => {
             <h3 className="text-lg font-semibold">Services</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/services" className="text-white/80 hover:text-NexEra-gold transition-colors duration-300">
+                <Link to="/services" className="text-white/80 hover:text-R.S.-gold transition-colors duration-300">
                   Custom Software Development
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-white/80 hover:text-NexEra-gold transition-colors duration-300">
+                <Link to="/services" className="text-white/80 hover:text-R.S.-gold transition-colors duration-300">
                   IT Consulting
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-white/80 hover:text-NexEra-gold transition-colors duration-300">
+                <Link to="/services" className="text-white/80 hover:text-R.S.-gold transition-colors duration-300">
                   AI & Machine Learning
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-white/80 hover:text-NexEra-gold transition-colors duration-300">
+                <Link to="/services" className="text-white/80 hover:text-R.S.-gold transition-colors duration-300">
                   Cloud Solutions
                 </Link>
               </li>
@@ -144,29 +144,29 @@ const Footer = () => {
             <h3 className="text-lg font-semibold">Contact Us</h3>
             <ul className="space-y-2">
               <li className="flex items-start space-x-2">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mt-0.5 flex-shrink-0 text-NexEra-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mt-0.5 flex-shrink-0 text-R.S.-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                   <circle cx="12" cy="10" r="3"></circle>
                 </svg>
                 <span className="text-white/80">
-                 H-424, Eknath Nagar, Usmanpura,<br /> Chh Sambhaji Nagar Karnataka
+                 173/74, hanuamanta nagar lokhande mala jail road nahsik road nashik 422101
                 </span>
               </li>
               <li className="flex items-center space-x-2">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 flex-shrink-0 text-NexEra-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 flex-shrink-0 text-R.S.-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                 </svg>
-                <span className="text-white/80">+91 9699925064
+                <span className="text-white/80">+91 8767891520
 </span>
-                <span className="text-white/80">+91 9322455304
+                <span className="text-white/80">+91 8766893127
 </span>
               </li>
               <li className="flex items-center space-x-2">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 flex-shrink-0 text-NexEra-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 flex-shrink-0 text-R.S.-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                   <polyline points="22,6 12,13 2,6"></polyline>
                 </svg>
-                <span className="text-white/80">contact@NexEra.com</span>
+                <span className="text-white/80">contact.rs@zohomail.in</span>
               </li>
             </ul>
           </motion.div>
@@ -174,7 +174,7 @@ const Footer = () => {
 
         <div className="mt-12 pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center">
           <p className="text-white/70 text-sm">
-            © {currentYear} NexEra inotech. All rights reserved.
+            © {currentYear} R.S. inotech. All rights reserved.
           </p>
           <div className="mt-4 md:mt-0">
             <ul className="flex space-x-6">

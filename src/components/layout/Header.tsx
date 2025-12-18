@@ -58,7 +58,7 @@ const Header = () => {
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
             <span className="font-display text-2xl font-bold text-gradient-purple-gold">
-              NexEra
+              Rocket Science
             </span>
           </motion.div>
         </Link>

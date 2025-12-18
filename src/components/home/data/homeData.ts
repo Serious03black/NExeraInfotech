@@ -87,7 +87,7 @@ export const products = [
 
 export const trustFactors = [
   {
-    title: "ISO Certified",
+    title: "MSME Certified",
     description: "We adhere to international standards for quality and security."
   },
   {
